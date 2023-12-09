@@ -71,18 +71,21 @@ class HomePage extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: SizedBox(
-            height: sH * 0.34,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: coms.length, // Number of items in the list
-              itemBuilder: (context, index) {
-                return ComicCardRecomendation(
-                  sW: sW,
-                  sH: sH,
-                  ccomic: coms[index],
-                );
-              },
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: SizedBox(
+              height: sH * 0.34,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: coms.length, // Number of items in the list
+                itemBuilder: (context, index) {
+                  return ComicCardRecomendation(
+                    sW: sW,
+                    sH: sH,
+                    ccomic: coms[index],
+                  );
+                },
+              ),
             ),
           ),
         ),
@@ -95,66 +98,71 @@ class HomePage extends StatelessWidget {
         SizedBox(
           width: sW * 0.1,
           height: 400,
-          child: Padding(
-            padding: const EdgeInsets.only(right: 20.0, left: 10),
-            child: GridView.builder(
-              scrollDirection: Axis.horizontal,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // number of items in each row
-                mainAxisExtent: sW * 0.35,
-                mainAxisSpacing: 0.0, // spacing between rows
-                crossAxisSpacing: 00.0, // spacing between columns
-              ),
-              padding: const EdgeInsets.only(
-                  left: 0, top: 10, right: 5), // padding around the grid
-              itemCount: coms.length, // total number of items
-              itemBuilder: (context, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            coms[index].imgPoster,
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 0, left: 5),
+              child: GridView.builder(
+                scrollDirection: Axis.horizontal,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // number of items in each row
+                  mainAxisExtent: sW * 0.35,
+                  mainAxisSpacing: 0.0, // spacing between rows
+                  crossAxisSpacing: 00.0, // spacing between columns
+                ),
+                padding: EdgeInsets.only(
+                    left: 0,
+                    top: sH * 0.01,
+                    right: sW * 0.05), // padding around the grid
+                itemCount: coms.length, // total number of items
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              coms[index].imgPoster,
+                            ),
                           ),
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        height: sH * 0.17,
+                        width: sW * 0.3,
                       ),
-                      height: sH * 0.17,
-                      width: sW * 0.3,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: ProText(
-                          lines: 1,
-                          text: 'سپایدەر-مان',
-                          textStyle: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Rabar',
-                              fontSize: 12)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Flexible(
-                        child: RichText(
-                          textScaler: TextScaler.linear(
-                              ScaleSize.textScaleFactor(context)),
-                          overflow: TextOverflow.ellipsis,
-                          text: const TextSpan(
-                            text: 'ڕۆمانس, سەرکێشی',
-                            style: TextStyle(
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
+                        child: ProText(
+                            lines: 1,
+                            text: 'سپایدەر-مان',
+                            textStyle: TextStyle(
+                                color: Colors.white,
                                 fontFamily: 'Rabar',
-                                color: Colors.white54,
-                                fontSize: 12),
+                                fontSize: 12)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: Flexible(
+                          child: RichText(
+                            textScaler: TextScaler.linear(
+                                ScaleSize.textScaleFactor(context)),
+                            overflow: TextOverflow.ellipsis,
+                            text: const TextSpan(
+                              text: 'ڕۆمانس, سەرکێشی',
+                              style: TextStyle(
+                                  fontFamily: 'Rabar',
+                                  color: Colors.white54,
+                                  fontSize: 12),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                );
-              },
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ),
@@ -174,68 +182,71 @@ class HomePage extends StatelessWidget {
                     sW: sW * 1.7,
                     title: 'کۆمیکی حەفتانە',
                     subtitle: 'کۆمیکی ئەم حەفتەیە لە دەست مەدە'),
-                Container(
-                    width: double.infinity,
-                    height: sH * .28,
-                    child: GridView.builder(
-                      scrollDirection: Axis.horizontal,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1, // number of items in each row
-                        mainAxisExtent: sW * 0.35,
-                        mainAxisSpacing: 0.0, // spacing between rows
-                        crossAxisSpacing: 00.0, // spacing between columns
-                      ),
-                      padding: const EdgeInsets.only(
-                          left: 0, top: 14), // padding around the grid
-                      itemCount: coms.length, // total number of items
-                      itemBuilder: (context, index) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                    coms[index].imgPoster,
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Container(
+                      width: double.infinity,
+                      height: sH * .28,
+                      child: GridView.builder(
+                        scrollDirection: Axis.horizontal,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1, // number of items in each row
+                          mainAxisExtent: sW * 0.35,
+                          mainAxisSpacing: 0.0, // spacing between rows
+                          crossAxisSpacing: 00.0, // spacing between columns
+                        ),
+                        padding: const EdgeInsets.only(
+                            left: 0, top: 14), // padding around the grid
+                        itemCount: coms.length, // total number of items
+                        itemBuilder: (context, index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                      coms[index].imgPoster,
+                                    ),
                                   ),
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
-                                borderRadius: BorderRadius.circular(15),
+                                height: sH * 0.17,
+                                width: sW * 0.3,
                               ),
-                              height: sH * 0.17,
-                              width: sW * 0.3,
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(top: 8.0),
-                              child: ProText(
-                                  lines: 1,
-                                  text: 'Spider-Man',
-                                  textStyle: TextStyle(
-                                      color: Colors.amber,
-                                      fontFamily: 'Rabar',
-                                      fontSize: 12)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: Flexible(
-                                child: RichText(
-                                  textScaler: TextScaler.linear(
-                                      ScaleSize.textScaleFactor(context)),
-                                  overflow: TextOverflow.ellipsis,
-                                  text: const TextSpan(
-                                    text: 'ڕۆمانس ، سەرکێشی',
-                                    style: TextStyle(
+                              const Padding(
+                                padding: EdgeInsets.only(top: 8.0),
+                                child: ProText(
+                                    lines: 1,
+                                    text: 'Spider-Man',
+                                    textStyle: TextStyle(
+                                        color: Colors.amber,
                                         fontFamily: 'Rabar',
-                                        color: Colors.white54,
-                                        fontSize: 12),
+                                        fontSize: 12)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: Flexible(
+                                  child: RichText(
+                                    textScaler: TextScaler.linear(
+                                        ScaleSize.textScaleFactor(context)),
+                                    overflow: TextOverflow.ellipsis,
+                                    text: const TextSpan(
+                                      text: 'ڕۆمانس ، سەرکێشی',
+                                      style: TextStyle(
+                                          fontFamily: 'Rabar',
+                                          color: Colors.white54,
+                                          fontSize: 12),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        );
-                      },
-                    ))
+                            ],
+                          );
+                        },
+                      )),
+                )
               ],
             ),
           ),
