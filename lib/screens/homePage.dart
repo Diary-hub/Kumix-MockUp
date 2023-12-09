@@ -127,6 +127,7 @@ class HomePage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(top: 8.0),
                       child: ProText(
+                          lines: 1,
                           text: 'Spider-Man',
                           textStyle: TextStyle(
                               color: Colors.amber,
@@ -206,6 +207,7 @@ class HomePage extends StatelessWidget {
                             const Padding(
                               padding: EdgeInsets.only(top: 8.0),
                               child: ProText(
+                                  lines: 1,
                                   text: 'Spider-Man',
                                   textStyle: TextStyle(
                                       color: Colors.amber,
