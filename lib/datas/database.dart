@@ -2,22 +2,22 @@ import 'package:project_zanko/datas/comics.dart';
 
 const List<Comic> coms = [
   Comic(
-      title: 'Wolverine!',
-      categories: 'Action, Comedy',
+      title: 'وۆڵڤرین',
+      categories: 'ئەکشن, کۆمێدی',
       description:
-          'Me And you we going to kill you and me and you in the end just me and you  Me And you we going to kill you and me and you in the end just me and youMe And you we going to kill you and me and you in the end just me and youMe And you we going to kill you and me and you in the end just me and you Me And you we going to kill you and me and you in the end just me and you',
+          'من و تۆ ئێمە دەچینە کوشتنی تۆ و من و تۆ لە کۆتاییدا تەنها من و تۆ من و تۆ ئێمە دەچین بۆ کوشتنی تۆ و من و تۆ لە کۆتاییدا تەنها من و تۆمن و تۆ ئێمە دەچین بۆ کوشتنی تۆ و من و تۆ لە کۆتایی تەنها من و تۆمن و تۆ ئێمە دەچینە کوشتنی تۆ و من و تۆ لە کۆتاییدا تەنها من و تۆ من و تۆ ئێمە دەچین بۆ کوشتنی تۆ و من و تۆ لە کۆتاییدا تەنها من و تۆ',
       imgPoster:
           'https://i.etsystatic.com/35681979/r/il/d1d7c8/3953902641/il_570xN.3953902641_60mb.jpg'),
   Comic(
-      title: 'The Amazing Spider-Man',
-      categories: 'Actions, Comedy, Romance',
+      title: 'سپایدەر-مان',
+      categories: 'ئەکشن, کۆمێدی, ڕۆمانس',
       description:
-          'Me And you we going to kill you and me and you in the end just me and you',
+          'من و تۆ ئێمە دەچینە کوشتنی تۆ و من و تۆ لە کۆتاییدا تەنها من و تۆ',
       imgPoster:
           'https://static.posters.cz/image/350/posters/spider-man-web-sling-i34546.jpg'),
   Comic(
-      title: 'The Amazing Spider-Man',
-      categories: 'Actions, Comedy, Romance',
+      title: 'سپایدەر-مان',
+      categories: 'ئەکشن, کۆمێدی, ڕۆمانس',
       description:
           'Me And you we going to kill you and me and you in the end just me and you',
       imgPoster:

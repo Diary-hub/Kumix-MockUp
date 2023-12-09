@@ -43,30 +43,52 @@ class ComicCardRecomendation extends StatelessWidget {
               ),
             ),
 
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                width: sW * 0.35,
+                height: sH * 0.27,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 4,
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(17),
+                  image: DecorationImage(
+                      image: NetworkImage(ccomic.imgPoster), fit: BoxFit.fill),
+                ),
+              ),
+            ),
             // Content
             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 10),
+                  padding: const EdgeInsets.only(left: 10, top: 30),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(
                         width: sW * 0.4,
                         child: Flexible(
-                          child: RichText(
-                            textScaler: TextScaler.linear(
-                                ScaleSize.textScaleFactor(context)),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            text: TextSpan(
-                              text: ccomic.title,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontFamily: 'Oxygen',
-                                  fontWeight: FontWeight.w900),
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              RichText(
+                                textScaler: TextScaler.linear(
+                                    ScaleSize.textScaleFactor(context)),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                text: TextSpan(
+                                  text: ccomic.title,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontFamily: 'Raabar',
+                                      fontWeight: FontWeight.w900),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -80,20 +102,20 @@ class ComicCardRecomendation extends StatelessWidget {
                             style: const TextStyle(
                               color: Colors.white54,
                               fontSize: 12,
-                              fontFamily: 'Oxygen',
+                              fontFamily: 'Rabar',
                             ),
                           ),
                         ),
                       ),
                       SizedBox(height: sH * 0.025),
                       Text(
-                        'Synopsis',
+                        'کورتە',
                         textScaler: TextScaler.linear(
                             ScaleSize.textScaleFactor(context)),
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 14,
-                          fontFamily: 'Oxygen',
+                          fontFamily: 'Rabar',
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -104,18 +126,22 @@ class ComicCardRecomendation extends StatelessWidget {
                         width: sW * 0.4,
                         height: sH * 0.1,
                         child: Flexible(
-                          child: RichText(
-                            textScaler: TextScaler.linear(
-                                ScaleSize.textScaleFactor(context)),
-                            maxLines: 5,
-                            overflow: TextOverflow.ellipsis,
-                            text: TextSpan(
-                              text: ccomic.description,
-                              style: const TextStyle(
-                                color: Colors.white54,
-                                fontSize: 12,
-                                fontFamily: 'Oxygen',
-                                fontWeight: FontWeight.w400,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: RichText(
+                              textDirection: TextDirection.rtl,
+                              textScaler: TextScaler.linear(
+                                  ScaleSize.textScaleFactor(context)),
+                              maxLines: 5,
+                              overflow: TextOverflow.ellipsis,
+                              text: TextSpan(
+                                text: ccomic.description,
+                                style: const TextStyle(
+                                  color: Colors.white54,
+                                  fontSize: 12,
+                                  fontFamily: 'Rabar',
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
                           ),
@@ -124,23 +150,7 @@ class ComicCardRecomendation extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: sW * 0.09),
-                Center(
-                  child: Container(
-                    width: sW * 0.35,
-                    height: sH * 0.27,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 4,
-                        color: Colors.white,
-                      ),
-                      borderRadius: BorderRadius.circular(17),
-                      image: DecorationImage(
-                          image: NetworkImage(ccomic.imgPoster),
-                          fit: BoxFit.fill),
-                    ),
-                  ),
-                ),
+                SizedBox(width: sW * 0.05),
               ],
             ),
           ],
