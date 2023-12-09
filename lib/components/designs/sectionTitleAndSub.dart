@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
-import 'package:project_zanko/helpers/fontScalor.dart';
 
 class SectionTitleAndSub extends StatelessWidget {
   const SectionTitleAndSub({

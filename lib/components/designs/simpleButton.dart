@@ -43,7 +43,7 @@ class SimpleButton extends StatelessWidget {
           style: TextStyle(
               color: Colors.black,
               fontSize: titleFontSize,
-              fontFamily: "Oxygen",
+              fontFamily: "Rabar",
               fontWeight: fontWeight),
         ),
       ),

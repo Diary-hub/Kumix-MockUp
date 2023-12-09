@@ -42,42 +42,45 @@ class _InputfieldState extends State<Inputfield> {
           Radius.circular(18),
         ),
       ),
-      child: TextFormField(
-        onTap: () {
-          setState(() {
-            isFocused = true;
-          });
-        },
-        onTapOutside: (value) {
-          setState(() {
-            isFocused = false;
-          });
-        },
-        onSaved: (value) {
-          setState(() {
-            isFocused = false;
-          });
-        },
-        onFieldSubmitted: (value) {
-          setState(() {
-            isFocused = false;
-          });
-        },
-        obscureText: widget.obscured,
-        style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-            fontWeight: FontWeight.w500,
-            fontFamily: "Oxygen"),
-        decoration: InputDecoration(
-            prefixIcon: widget.icon,
-            labelStyle: const TextStyle(
-                color: Colors.white30,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-                fontFamily: "Oxygen"),
-            labelText: widget.label,
-            border: InputBorder.none),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: TextFormField(
+          onTap: () {
+            setState(() {
+              isFocused = true;
+            });
+          },
+          onTapOutside: (value) {
+            setState(() {
+              isFocused = false;
+            });
+          },
+          onSaved: (value) {
+            setState(() {
+              isFocused = false;
+            });
+          },
+          onFieldSubmitted: (value) {
+            setState(() {
+              isFocused = false;
+            });
+          },
+          obscureText: widget.obscured,
+          style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500,
+              fontFamily: "Rabar"),
+          decoration: InputDecoration(
+              prefixIcon: widget.icon,
+              labelStyle: const TextStyle(
+                  color: Colors.white30,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  fontFamily: "Rabar"),
+              labelText: widget.label,
+              border: InputBorder.none),
+        ),
       ),
     );
   }

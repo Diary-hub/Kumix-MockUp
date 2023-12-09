@@ -2,8 +2,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/inputField.dart';
+import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/simpleButton.dart';
-import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/helpers/scrollBehavior.dart';
 import 'package:project_zanko/screens/loginPage.dart';
 
@@ -29,37 +29,28 @@ class SignupPage extends StatelessWidget {
                   height: sH * 0.08,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: sW * 0, left: sW * .10),
+                  padding: EdgeInsets.only(right: sW * .10, left: sW * 0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Create Account",
-                              textScaler: TextScaler.linear(
-                                ScaleSize.textScaleFactor(context),
-                              ),
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 32,
-                                  fontFamily: 'Oxygen',
-                                  fontWeight: FontWeight.bold),
+                            padding: const EdgeInsets.fromLTRB(8, 8, 0, 18),
+                            child: ProTextKurdish(
+                              text: "درووست کردنی هەژمار",
+                              rang: Colors.white,
+                              fontsize: 30,
                             ),
                           ),
                           Padding(
                             padding:
-                                const EdgeInsets.only(left: 8.0, bottom: 8.0),
-                            child: Text(
-                              "Please fill the feilds below",
-                              textScaler: TextScaler.linear(
-                                  ScaleSize.textScaleFactor(context)),
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Oxygen',
-                              ),
+                                const EdgeInsets.only(left: 8.0, bottom: 10.0),
+                            child: ProTextKurdish(
+                              text: "تکایە ئەم فۆڕمە پڕ بکەرەوە",
+                              rang: Colors.grey,
+                              fontsize: 17,
                             ),
                           ),
                         ],
@@ -73,56 +64,62 @@ class SignupPage extends StatelessWidget {
                     sH: sH,
                     icon: const Icon(Icons.person_2_outlined),
                     obscured: false,
-                    label: "FULL NAME"),
+                    label: "ناوی تەواو"),
                 SizedBox(height: sH * .02),
                 Inputfield(
                     sW: sW,
                     sH: sH,
                     icon: const Icon(Icons.phone_iphone_outlined),
                     obscured: false,
-                    label: "PHONE"),
+                    label: "ژمارەی مۆبایل"),
                 SizedBox(height: sH * .02),
                 Inputfield(
                     sW: sW,
                     sH: sH,
                     icon: const Icon(Icons.mail_outline),
                     obscured: false,
-                    label: "EMAIL"),
+                    label: "ئیمەیڵ"),
                 SizedBox(height: sH * .02),
                 Inputfield(
                     sW: sW,
                     sH: sH,
                     icon: const Icon(Icons.lock_outline),
                     obscured: true,
-                    label: "PASSWORD"),
+                    label: "وشەی نهێنی"),
                 SizedBox(height: sH * .02),
                 Inputfield(
                     sW: sW,
                     sH: sH,
                     icon: const Icon(Icons.lock_outline),
                     obscured: true,
-                    label: "CONFIRM PASSWORD"),
+                    label: "دڵنیای لە وشەی نهێنی"),
                 SizedBox(height: sH * .09),
                 SimpleButton(
                   sH: sH * 0.08,
                   sW: sW * 0.58,
                   fontWeight: FontWeight.bold,
                   radius: 100,
-                  title: "SIGN UP",
+                  title: "درووست کردن",
                   titleFontSize: 22,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
+                  },
                 ),
                 SizedBox(height: sH * .01),
                 RichText(
                   text: TextSpan(
-                    text: 'Already have account?',
+                    text: 'هەژمارت هەیە؟',
                     style: const TextStyle(
                         fontWeight: FontWeight.normal,
-                        fontSize: 12,
-                        color: Colors.white),
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontFamily: 'Rabar'),
                     children: [
                       TextSpan(
-                        text: ' Login',
+                        text: ' چوونە ژورەوە',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.pushReplacement(
                               context,
@@ -131,7 +128,8 @@ class SignupPage extends StatelessWidget {
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.onSecondary,
                             fontWeight: FontWeight.bold,
-                            fontSize: 14),
+                            fontSize: 15,
+                            fontFamily: 'Rabar'),
                       ),
                     ],
                   ),
