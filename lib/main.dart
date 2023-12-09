@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_zanko/screens/comicsPage.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
 import 'package:project_zanko/screens/homePage.dart';
 // ignore: unused_import
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           onSurface: Color(0xff848486),
         ),
       ),
-      home: DetailPage(index: 0),
+      home: ComicsPage(),
     );
   }
 }
