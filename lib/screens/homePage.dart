@@ -105,11 +105,12 @@ class HomePage extends StatelessWidget {
                 mainAxisSpacing: 0.0, // spacing between rows
                 crossAxisSpacing: 00.0, // spacing between columns
               ),
-              padding: const EdgeInsets.all(8.0), // padding around the grid
+              padding: const EdgeInsets.only(
+                  left: 0, top: 10, right: 5), // padding around the grid
               itemCount: coms.length, // total number of items
               itemBuilder: (context, index) {
                 return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
                       decoration: BoxDecoration(
@@ -127,11 +128,11 @@ class HomePage extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(top: 8.0),
                       child: ProText(
-                          text: 'Spider-Man',
+                          text: 'سپایدەر-مان',
                           textStyle: TextStyle(
-                              color: Colors.amber,
-                              fontFamily: 'Oxygen',
-                              fontSize: 14)),
+                              color: Colors.white,
+                              fontFamily: 'Rabar',
+                              fontSize: 12)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8),
@@ -141,9 +142,9 @@ class HomePage extends StatelessWidget {
                               ScaleSize.textScaleFactor(context)),
                           overflow: TextOverflow.ellipsis,
                           text: const TextSpan(
-                            text: 'Romace, Adventure',
+                            text: 'ڕۆمانس, سەرکێشی',
                             style: TextStyle(
-                                fontFamily: 'Oxygen',
+                                fontFamily: 'Rabar',
                                 color: Colors.white54,
                                 fontSize: 12),
                           ),
@@ -183,8 +184,8 @@ class HomePage extends StatelessWidget {
                         mainAxisSpacing: 0.0, // spacing between rows
                         crossAxisSpacing: 00.0, // spacing between columns
                       ),
-                      padding:
-                          const EdgeInsets.all(18.0), // padding around the grid
+                      padding: const EdgeInsets.only(
+                          left: 0, top: 14), // padding around the grid
                       itemCount: coms.length, // total number of items
                       itemBuilder: (context, index) {
                         return Column(
@@ -206,11 +207,11 @@ class HomePage extends StatelessWidget {
                             const Padding(
                               padding: EdgeInsets.only(top: 8.0),
                               child: ProText(
-                                  text: 'Spider-Man',
+                                  text: 'سپایدەر-مان',
                                   textStyle: TextStyle(
                                       color: Colors.amber,
-                                      fontFamily: 'Oxygen',
-                                      fontSize: 14)),
+                                      fontFamily: 'Rabar',
+                                      fontSize: 12)),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 8),
@@ -220,9 +221,9 @@ class HomePage extends StatelessWidget {
                                       ScaleSize.textScaleFactor(context)),
                                   overflow: TextOverflow.ellipsis,
                                   text: const TextSpan(
-                                    text: 'Romace, Adventure',
+                                    text: 'ڕۆمانس ، سەرکێشی',
                                     style: TextStyle(
-                                        fontFamily: 'Oxygen',
+                                        fontFamily: 'Rabar',
                                         color: Colors.white54,
                                         fontSize: 12),
                                   ),

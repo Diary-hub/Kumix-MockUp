@@ -69,7 +69,7 @@ class ComicCardRecomendation extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(
-                        width: sW * 0.4,
+                        width: sW * 0.45,
                         child: Flexible(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -83,8 +83,8 @@ class ComicCardRecomendation extends StatelessWidget {
                                   text: ccomic.title,
                                   style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18,
-                                      fontFamily: 'Raabar',
+                                      fontSize: 16,
+                                      fontFamily: 'Rabar',
                                       fontWeight: FontWeight.w900),
                                 ),
                               ),
@@ -140,7 +140,7 @@ class ComicCardRecomendation extends StatelessWidget {
                                   color: Colors.white54,
                                   fontSize: 12,
                                   fontFamily: 'Rabar',
-                                  fontWeight: FontWeight.w400,
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ),
                             ),
