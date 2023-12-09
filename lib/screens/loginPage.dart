@@ -2,9 +2,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/inputField.dart';
+import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/simpleButton.dart';
-import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/helpers/scrollBehavior.dart';
+import 'package:project_zanko/screens/homePage.dart';
 import 'package:project_zanko/screens/signupPage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -39,35 +40,27 @@ class LoginPage extends StatelessWidget {
                   height: sH * 0.05,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: sW * 0, left: sW * .10),
+                  padding: EdgeInsets.only(right: sW * .10, left: sW * .0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Login",
-                              textScaler: TextScaler.linear(
-                                  ScaleSize.textScaleFactor(context)),
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 28,
-                                  fontFamily: 'Oxygen',
-                                  fontWeight: FontWeight.bold),
+                            child: ProTextKurdish(
+                              text: "چوونە ژورەوە",
+                              rang: Colors.white,
+                              fontsize: 28,
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Please login to continue",
-                              textScaler: TextScaler.linear(
-                                  ScaleSize.textScaleFactor(context)),
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Oxygen',
-                              ),
+                            child: ProTextKurdish(
+                              text: "تکایە داخڵ ببە بۆ بەردەوامبوون",
+                              fontsize: 14,
+                              rang: Colors.grey,
                             ),
                           ),
                         ],
@@ -81,54 +74,62 @@ class LoginPage extends StatelessWidget {
                     sH: sH,
                     icon: const Icon(Icons.mail_outline),
                     obscured: false,
-                    label: "EMAIL"),
+                    label: "ئیمەیڵ"),
                 SizedBox(height: sH * .02),
                 Inputfield(
                     sW: sW,
                     sH: sH,
                     icon: const Icon(Icons.lock_outline),
                     obscured: true,
-                    label: "PASSWORD"),
+                    label: "وشەی نهێنی"),
                 SizedBox(height: sH * .02),
                 SimpleButton(
                   sH: sH * 0.08,
                   sW: sW * 0.45,
                   fontWeight: FontWeight.bold,
                   radius: 100,
-                  title: "LOGIN",
+                  title: "چوونە ژورەوە",
                   titleFontSize: 22,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()));
+                  },
                 ),
                 SizedBox(height: sH * .01),
                 GestureDetector(
                   onTap: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary),
+                  child: ProTextKurdish(
+                    text: "وشەی تێپەڕت لەبیر کردووە؟",
+                    rang: Theme.of(context).colorScheme.secondary,
+                    fontsize: 15,
                   ),
                 ),
                 SizedBox(height: sH * .08),
                 RichText(
                   text: TextSpan(
-                    text: 'Dont have account?',
+                    text: 'هەژمارت نیە؟',
                     style: const TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.normal,
-                      fontSize: 12,
+                      fontSize: 14,
+                      fontFamily: 'Rabar',
                     ),
                     children: [
                       TextSpan(
-                        text: ' Sign up',
+                        text: ' دروست کردن',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const SignupPage())),
                         style: TextStyle(
-                            color: Theme.of(context).colorScheme.onSecondary,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14),
+                          color: Theme.of(context).colorScheme.onSecondary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          fontFamily: 'Rabar',
+                        ),
                       ),
                     ],
                   ),
