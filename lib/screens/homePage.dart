@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/comicCardRecomendation.dart';
 import 'package:project_zanko/components/designs/proText.dart';
+import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/sectionTitleAndSub.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
@@ -28,15 +29,8 @@ class HomePage extends StatelessWidget {
             ),
             Column(
               children: [
-                Text(
-                  "Good Morning,",
-                  textScaler:
-                      TextScaler.linear(ScaleSize.textScaleFactor(context)),
-                  style: const TextStyle(
-                      fontFamily: 'Oxygen',
-                      fontSize: 15,
-                      color: Colors.white54),
-                ),
+                ProTextKurdish(
+                    fontsize: 15, rang: Colors.white54, text: "بەخێربێیت"),
                 Text(
                   "Muhammad",
                   textScaler:
@@ -71,9 +65,9 @@ class HomePage extends StatelessWidget {
         SizedBox(height: sH * 0.01),
         SectionTitleAndSub(
           sH: sH,
-          sW: sW,
-          title: 'New Release!',
-          subtitle: 'Latest Comics Recommendation',
+          sW: sW * 1.7,
+          title: 'نوێترینەکان',
+          subtitle: 'نوێترین کۆمیکە پێشنیارکراوەکان',
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -94,9 +88,9 @@ class HomePage extends StatelessWidget {
         ),
         SectionTitleAndSub(
           sH: sH,
-          sW: sW,
-          title: 'Most Popular Comics',
-          subtitle: 'Lots of Interesting Comics Here',
+          sW: sW * 1.7,
+          title: 'بەناوبانگترین کۆمیکەکان',
+          subtitle: 'کاتی چێز وەرگرتنە',
         ),
         SizedBox(
           width: sW * 0.1,
@@ -175,9 +169,9 @@ class HomePage extends StatelessWidget {
               children: [
                 SectionTitleAndSub(
                     sH: sH,
-                    sW: sW,
-                    title: 'Weekly Updates',
-                    subtitle: 'Dont Miss This Weeks Update'),
+                    sW: sW * 1.7,
+                    title: 'کۆمیکی حەفتانە',
+                    subtitle: 'کۆمیکی ئەم حەفتەیە لە دەست مەدە'),
                 Container(
                     width: double.infinity,
                     height: sH * .28,
@@ -244,22 +238,23 @@ class HomePage extends StatelessWidget {
           ),
         )
       ]),
-      bottomNavigationBar: const GNav(tabs: [
+      bottomNavigationBar:
+          const GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
         GButton(
           icon: Icons.home_outlined,
-          text: '    Home',
+          text: '    سەرەکی',
         ),
         GButton(
           icon: Icons.library_books_outlined,
-          text: '    Comics',
+          text: '  کۆمیکس',
         ),
         GButton(
           icon: Icons.favorite_outline,
-          text: '    Favourites',
+          text: '    دڵخوازەکان',
         ),
         GButton(
           icon: Icons.person_3_outlined,
-          text: '    Account',
+          text: '    هەژمار',
         )
       ]),
     );
