@@ -18,7 +18,7 @@ class ProText extends StatelessWidget {
       child: RichText(
         textScaler: TextScaler.linear(ScaleSize.textScaleFactor(context)),
         maxLines: lines,
-        overflow: TextOverflow.ellipsis,
+        overflow: TextOverflow.fade,
         text: TextSpan(text: text, style: textStyle),
       ),
     );

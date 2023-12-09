@@ -75,23 +75,6 @@ class DetailPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: Colors.white54,
-                                  )),
-                              child: const Padding(
-                                padding: EdgeInsets.all(2.0),
-                                child: Icon(
-                                  Icons.favorite_outline,
-                                  size: 25,
-                                ),
-                              ),
-                            ),
-                          ),
                           SimpleButton(
                               sH: sH * 0.05,
                               sW: sW * 0.2,
@@ -148,7 +131,7 @@ class DetailPage extends StatelessWidget {
                         ProTextKurdish(
                           fontsize: 22,
                           rang: Colors.white,
-                          text: 'زانیاری',
+                          text: 'کورتە',
                         ),
                         SizedBox(height: sH * 0.02),
                         const ProText(
@@ -182,14 +165,18 @@ class DetailPage extends StatelessWidget {
         ),
         Positioned(
           bottom: 0.1,
-          child: SimpleButton(
-              sH: sH * 0.1,
-              sW: sW * 0.9,
-              radius: 100,
-              title: 's',
-              fontWeight: FontWeight.bold,
-              titleFontSize: 12,
-              onPressed: () {}),
+          left: sW * .025,
+          child: Padding(
+            padding: const EdgeInsets.all(13.0),
+            child: SimpleButton(
+                sH: sH * 0.08,
+                sW: sW * .90,
+                radius: 10,
+                title: 'زیادکردن بۆ دڵخوازەکان',
+                fontWeight: FontWeight.bold,
+                titleFontSize: 30,
+                onPressed: () {}),
+          ),
         ),
       ]),
     );

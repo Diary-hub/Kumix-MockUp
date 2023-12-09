@@ -18,24 +18,23 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     return MaterialApp(
-      title: "Kumics",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: const ColorScheme(
-          brightness: Brightness.dark,
-          primary: Colors.white,
-          onPrimary: Colors.white,
-          secondary: Color(0xff0df5e3),
-          onSecondary: Color(0xff0df5e3),
-          error: Color(0xffbe3535),
-          onError: Color(0xffd4b430),
-          background: Color(0xff17181c),
-          onBackground: Color.fromARGB(255, 30, 23, 48),
-          surface: Color(0xff1e2027),
-          onSurface: Color(0xff848486),
+        title: "Kumics",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: const ColorScheme(
+            brightness: Brightness.dark,
+            primary: Colors.white,
+            onPrimary: Colors.white,
+            secondary: Color(0xff0df5e3),
+            onSecondary: Color(0xff0df5e3),
+            error: Color(0xffbe3535),
+            onError: Color(0xffd4b430),
+            background: Color(0xff17181c),
+            onBackground: Color.fromARGB(255, 30, 23, 48),
+            surface: Color(0xff1e2027),
+            onSurface: Color(0xff848486),
+          ),
         ),
-      ),
-      home: DetailPage(index: 0),
-    );
+        home: const HomePage());
   }
 }
