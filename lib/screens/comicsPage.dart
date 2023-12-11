@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 
@@ -67,50 +69,46 @@ class ComicPage extends StatelessWidget {
             ],
           ),
         ),
-        Stack(
-          children: [
-            Positioned(
-                child: Padding(
-              padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
-                elevation: 15,
-                shadowColor: Colors.white,
-                child: Container(
-                  width: sW * 0.9,
-                  height: sH * 0.2,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 3,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      image: DecorationImage(
-                          image: NetworkImage(
-                            'https://i.pinimg.com/originals/5b/ed/00/5bed000df57b090e6f0d91969a80b091.gif',
-                          ),
-                          fit: BoxFit.fill)),
-                ),
-              ),
-            )),
-            Positioned(
-                bottom: sH * 0.18,
-                left: sW * 0.54,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  width: sW * 0.3,
-                  height: sH * 0.050,
-                  child: Center(
-                    child: ProTextKurdish(
-                        fontsize: 20, rang: Colors.black, text: 'ئەکشن'),
-                  ),
-                ))
-          ],
-        )
+        CategoryContainerCard(
+            sW: sW,
+            sH: sH,
+            topic: 'ئەکشن',
+            rasm:
+                'https://i.pinimg.com/originals/95/b3/cb/95b3cb5797430aa139fd69782179344e.gif'),
+        CategoryContainerCard(
+            sW: sW,
+            sH: sH,
+            topic: 'کۆمیدی',
+            rasm:
+                'https://64.media.tumblr.com/0fc33e24c40e1e43cb1964f2b37cb916/tumblr_mrahsn1iCV1sstysro1_500.gif'),
+        CategoryContainerCard(
+            sW: sW,
+            sH: sH,
+            topic: 'ڕۆمانس',
+            rasm:
+                'https://31.media.tumblr.com/781150ac1ce6f67f0e19f2fd1698d31d/tumblr_mo717vKaO71s7f354o1_500.gif'),
       ]),
+      bottomNavigationBar: const Directionality(
+        textDirection: TextDirection.rtl,
+        child: GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
+          GButton(
+            icon: Icons.home_outlined,
+            text: '    سەرەکی',
+          ),
+          GButton(
+            icon: Icons.library_books_outlined,
+            text: '  کۆمیکس',
+          ),
+          GButton(
+            icon: Icons.favorite_outline,
+            text: '    دڵخوازەکان',
+          ),
+          GButton(
+            icon: Icons.person_3_outlined,
+            text: '    هەژمار',
+          )
+        ]),
+      ),
     );
   }
 }
