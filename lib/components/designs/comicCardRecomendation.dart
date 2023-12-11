@@ -98,7 +98,16 @@ class ComicCardRecomendation extends StatelessWidget {
                               ScaleSize.textScaleFactor(context)),
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(
-                            text: ccomic.categories,
+                            text: ccomic.categories
+                                .toSet()
+                                .toString()
+                                .substring(
+                                    1,
+                                    ccomic.categories
+                                            .toSet()
+                                            .toString()
+                                            .length -
+                                        1),
                             style: const TextStyle(
                               color: Colors.white54,
                               fontSize: 12,
