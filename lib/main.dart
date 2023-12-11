@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           onSurface: Color(0xff848486),
         ),
       ),
-      home: ActionsPage(),
+      home: const ComicPage(),
     );
   }
 }

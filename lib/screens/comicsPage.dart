@@ -3,6 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
+import 'package:project_zanko/screens/actionComics.dart';
 
 class ComicPage extends StatelessWidget {
   const ComicPage({super.key});
@@ -70,18 +71,30 @@ class ComicPage extends StatelessWidget {
           ),
         ),
         CategoryContainerCard(
+            arwalla: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+            },
             sW: sW,
             sH: sH,
             topic: 'ئەکشن',
             rasm:
                 'https://i.pinimg.com/originals/95/b3/cb/95b3cb5797430aa139fd69782179344e.gif'),
         CategoryContainerCard(
+            arwalla: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+            },
             sW: sW,
             sH: sH,
             topic: 'کۆمیدی',
             rasm:
                 'https://64.media.tumblr.com/0fc33e24c40e1e43cb1964f2b37cb916/tumblr_mrahsn1iCV1sstysro1_500.gif'),
         CategoryContainerCard(
+            arwalla: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+            },
             sW: sW,
             sH: sH,
             topic: 'ڕۆمانس',

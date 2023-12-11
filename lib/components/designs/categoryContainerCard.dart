@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 
 class CategoryContainerCard extends StatelessWidget {
-  CategoryContainerCard({
-    super.key,
-    required this.sW,
-    required this.sH,
-    required this.topic,
-    required this.rasm,
-  });
+  CategoryContainerCard(
+      {super.key,
+      required this.sW,
+      required this.sH,
+      required this.topic,
+      required this.rasm,
+      required this.arwalla});
 
+  Function arwalla;
   final double sW;
   final double sH;
   String topic;
@@ -17,11 +18,13 @@ class CategoryContainerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Stack(
-        children: [
-          Positioned(
+    return Stack(
+      children: [
+        GestureDetector(
+          onTap: () {
+            arwalla();
+          },
+          child: Positioned(
               child: Padding(
             padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
             child: Card(
@@ -46,22 +49,22 @@ class CategoryContainerCard extends StatelessWidget {
               ),
             ),
           )),
-          Positioned(
-              bottom: sH * 0.18,
-              left: sW * 0.54,
-              child: Container(
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                width: sW * 0.3,
-                height: sH * 0.050,
-                child: Center(
-                  child: ProTextKurdish(
-                      fontsize: 20, rang: Colors.black, text: topic),
-                ),
-              ))
-        ],
-      ),
+        ),
+        Positioned(
+            bottom: sH * 0.18,
+            left: sW * 0.54,
+            child: Container(
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              width: sW * 0.3,
+              height: sH * 0.050,
+              child: Center(
+                child: ProTextKurdish(
+                    fontsize: 20, rang: Colors.black, text: topic),
+              ),
+            ))
+      ],
     );
   }
 }
