@@ -10,21 +10,21 @@ class CategoryContainerCard extends StatelessWidget {
       required this.rasm,
       required this.arwalla});
 
-  Function arwalla;
   final double sW;
   final double sH;
   String topic;
   String rasm;
+  Function arwalla;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GestureDetector(
-          onTap: () {
-            arwalla();
-          },
-          child: Positioned(
+    return GestureDetector(
+      onTap: () {
+        arwalla();
+      },
+      child: Stack(
+        children: [
+          Positioned(
               child: Padding(
             padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
             child: Card(
