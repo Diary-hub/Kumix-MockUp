@@ -39,6 +39,8 @@ class SignupPage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(8, 8, 0, 18),
                             child: ProTextKurdish(
+                              lines: 1,
+                              sW: sW * 0.7,
                               text: "درووست کردنی هەژمار",
                               rang: Colors.white,
                               fontsize: 30,
@@ -48,6 +50,8 @@ class SignupPage extends StatelessWidget {
                             padding:
                                 const EdgeInsets.only(left: 8.0, bottom: 10.0),
                             child: ProTextKurdish(
+                              lines: 1,
+                              sW: sW * 0.7,
                               text: "تکایە ئەم فۆڕمە پڕ بکەرەوە",
                               rang: Colors.grey,
                               fontsize: 17,

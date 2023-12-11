@@ -49,22 +49,26 @@ class CategoryContainerCard extends StatelessWidget {
               ),
             ),
           )),
-        ),
-        Positioned(
-            bottom: sH * 0.18,
-            left: sW * 0.54,
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-              width: sW * 0.3,
-              height: sH * 0.050,
-              child: Center(
-                child: ProTextKurdish(
-                    fontsize: 20, rang: Colors.black, text: topic),
-              ),
-            ))
-      ],
+          Positioned(
+              bottom: sH * 0.18,
+              left: sW * 0.54,
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                width: sW * 0.3,
+                height: sH * 0.050,
+                child: Center(
+                  child: ProTextKurdish(
+                      lines: 1,
+                      sW: sW,
+                      fontsize: 20,
+                      rang: Colors.black,
+                      text: topic),
+                ),
+              ))
+        ],
+      ),
     );
   }
 }

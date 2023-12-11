@@ -26,7 +26,11 @@ class ComicPage extends StatelessWidget {
             Column(
               children: [
                 ProTextKurdish(
-                    fontsize: 15, rang: Colors.white54, text: "بەخێربێیت"),
+                    lines: 1,
+                    sW: sW * 0.14,
+                    fontsize: 15,
+                    rang: Colors.white54,
+                    text: "بەخێربێیت"),
                 Text(
                   "Muhammad",
                   textScaler:
@@ -64,6 +68,8 @@ class ComicPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ProTextKurdish(
+                  lines: 1,
+                  sW: sW * 0.5,
                   fontsize: 20,
                   rang: Colors.white,
                   text: 'ژانەری دڵخوازت هەڵبژێرە')
