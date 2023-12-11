@@ -37,7 +37,13 @@ class ActionsPage extends StatelessWidget {
           Text('     ')
         ],
         centerTitle: true,
-        title: ProTextKurdish(fontsize: 20, rang: Colors.white, text: 'ئەکشن'),
+        title: ProTextKurdish(
+          fontsize: 20,
+          rang: Colors.white,
+          text: 'ئەکشن',
+          sW: sW * 0.1,
+          lines: 1,
+        ),
       ),
       body: Container(
         width: sW * 1,
