@@ -272,25 +272,27 @@ class HomePage extends StatelessWidget {
           ),
         )
       ]),
-      bottomNavigationBar:
-          const GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
-        GButton(
-          icon: Icons.home_outlined,
-          text: '    سەرەکی',
-        ),
-        GButton(
-          icon: Icons.library_books_outlined,
-          text: '  کۆمیکس',
-        ),
-        GButton(
-          icon: Icons.favorite_outline,
-          text: '    دڵخوازەکان',
-        ),
-        GButton(
-          icon: Icons.person_3_outlined,
-          text: '    هەژمار',
-        )
-      ]),
+      bottomNavigationBar: const Directionality(
+        textDirection: TextDirection.rtl,
+        child: GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
+          GButton(
+            icon: Icons.home_outlined,
+            text: '    سەرەکی',
+          ),
+          GButton(
+            icon: Icons.library_books_outlined,
+            text: '  کۆمیکس',
+          ),
+          GButton(
+            icon: Icons.favorite_outline,
+            text: '    دڵخوازەکان',
+          ),
+          GButton(
+            icon: Icons.person_3_outlined,
+            text: '    هەژمار',
+          )
+        ]),
+      ),
     );
   }
 }
