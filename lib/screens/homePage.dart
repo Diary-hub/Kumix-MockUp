@@ -31,7 +31,11 @@ class HomePage extends StatelessWidget {
             Column(
               children: [
                 ProTextKurdish(
-                    fontsize: 15, rang: Colors.white54, text: "بەخێربێیت"),
+                    lines: 1,
+                    sW: sW * 0.14,
+                    fontsize: 15,
+                    rang: Colors.white54,
+                    text: "بەخێربێیت"),
                 Text(
                   "Muhammad",
                   textScaler:

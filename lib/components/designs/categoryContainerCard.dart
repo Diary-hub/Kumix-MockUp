@@ -57,7 +57,11 @@ class CategoryContainerCard extends StatelessWidget {
                 height: sH * 0.050,
                 child: Center(
                   child: ProTextKurdish(
-                      fontsize: 20, rang: Colors.black, text: topic),
+                      lines: 1,
+                      sW: sW,
+                      fontsize: 20,
+                      rang: Colors.black,
+                      text: topic),
                 ),
               ))
         ],

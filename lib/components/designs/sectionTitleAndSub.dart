@@ -26,7 +26,13 @@ class SectionTitleAndSub extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              ProTextKurdish(fontsize: 18, rang: Colors.white, text: title),
+              ProTextKurdish(
+                lines: 1,
+                sW: sW * 0.3,
+                fontsize: 18,
+                rang: Colors.white,
+                text: title,
+              ),
               SizedBox(
                 height: sH * 0.01,
               ),
@@ -41,7 +47,11 @@ class SectionTitleAndSub extends StatelessWidget {
                     width: sW * 0.020,
                   ),
                   ProTextKurdish(
-                      fontsize: 16, rang: Colors.white54, text: "زیاتر ببینە"),
+                      lines: 1,
+                      sW: sW * 0.08,
+                      fontsize: 16,
+                      rang: Colors.white54,
+                      text: "زیاتر ببینە"),
                   GestureDetector(
                     onTap: () {},
                     child: SizedBox(
@@ -50,6 +60,8 @@ class SectionTitleAndSub extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ProTextKurdish(
+                              lines: 1,
+                              sW: sW * 0.3,
                               fontsize: 15,
                               rang: Colors.white54,
                               text: subtitle),

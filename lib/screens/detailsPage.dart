@@ -30,11 +30,15 @@ class DetailPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       ProTextKurdish(
+                        lines: 1,
+                        sW: sW * 0.5,
                         text: coms[index].title,
                         rang: Colors.white,
                         fontsize: 26,
                       ),
                       ProTextKurdish(
+                        lines: 1,
+                        sW: sW * 0.5,
                         text: "لە لایەن: پاپای قەشەکان",
                         rang: Colors.grey,
                         fontsize: 14,
@@ -129,6 +133,8 @@ class DetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ProTextKurdish(
+                          lines: 1,
+                          sW: sW,
                           fontsize: 22,
                           rang: Colors.white,
                           text: 'کورتە',

@@ -50,6 +50,8 @@ class LoginPage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ProTextKurdish(
+                              lines: 1,
+                              sW: sW * 0.5,
                               text: "چوونە ژورەوە",
                               rang: Colors.white,
                               fontsize: 28,
@@ -58,6 +60,8 @@ class LoginPage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ProTextKurdish(
+                              lines: 1,
+                              sW: sW * 0.5,
                               text: "تکایە داخڵ ببە بۆ بەردەوامبوون",
                               fontsize: 14,
                               rang: Colors.grey,
@@ -101,6 +105,8 @@ class LoginPage extends StatelessWidget {
                 GestureDetector(
                   onTap: () {},
                   child: ProTextKurdish(
+                    lines: 1,
+                    sW: sW * 0.37,
                     text: "وشەی تێپەڕت لەبیر کردووە؟",
                     rang: Theme.of(context).colorScheme.secondary,
                     fontsize: 15,
