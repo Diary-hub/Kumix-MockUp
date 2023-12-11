@@ -7,6 +7,7 @@ import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/sectionTitleAndSub.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
+import 'package:project_zanko/screens/detailsPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -79,10 +80,16 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: coms.length, // Number of items in the list
                 itemBuilder: (context, index) {
-                  return ComicCardRecomendation(
-                    sW: sW,
-                    sH: sH,
-                    ccomic: coms[index],
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(index: index)));
+                    },
+                    child: ComicCardRecomendation(
+                      sW: sW,
+                      sH: sH,
+                      ccomic: coms[index],
+                    ),
                   );
                 },
               ),
@@ -116,50 +123,56 @@ class HomePage extends StatelessWidget {
                     right: sW * 0.05), // padding around the grid
                 itemCount: coms.length, // total number of items
                 itemBuilder: (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(
-                              coms[index].imgPoster,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => DetailPage(index: index)));
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                coms[index].imgPoster,
+                              ),
                             ),
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                          borderRadius: BorderRadius.circular(15),
+                          height: sH * 0.17,
+                          width: sW * 0.3,
                         ),
-                        height: sH * 0.17,
-                        width: sW * 0.3,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 8.0),
-                        child: ProText(
-                            lines: 1,
-                            text: 'سپایدەر-مان',
-                            textStyle: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Rabar',
-                                fontSize: 12)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Flexible(
-                          child: RichText(
-                            textScaler: TextScaler.linear(
-                                ScaleSize.textScaleFactor(context)),
-                            overflow: TextOverflow.ellipsis,
-                            text: const TextSpan(
-                              text: 'ڕۆمانس, سەرکێشی',
-                              style: TextStyle(
+                        const Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: ProText(
+                              lines: 1,
+                              text: 'سپایدەر-مان',
+                              textStyle: TextStyle(
+                                  color: Colors.white,
                                   fontFamily: 'Rabar',
-                                  color: Colors.white54,
-                                  fontSize: 12),
+                                  fontSize: 12)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8),
+                          child: Flexible(
+                            child: RichText(
+                              textScaler: TextScaler.linear(
+                                  ScaleSize.textScaleFactor(context)),
+                              overflow: TextOverflow.ellipsis,
+                              text: const TextSpan(
+                                text: 'ڕۆمانس, سەرکێشی',
+                                style: TextStyle(
+                                    fontFamily: 'Rabar',
+                                    color: Colors.white54,
+                                    fontSize: 12),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
               ),
@@ -172,7 +185,7 @@ class HomePage extends StatelessWidget {
         Container(
           width: double.infinity,
           height: sH * .37,
-          decoration: BoxDecoration(color: Colors.white10),
+          decoration: const BoxDecoration(color: Colors.white10),
           child: Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Column(
@@ -184,7 +197,7 @@ class HomePage extends StatelessWidget {
                     subtitle: 'کۆمیکی ئەم حەفتەیە لە دەست مەدە'),
                 Directionality(
                   textDirection: TextDirection.rtl,
-                  child: Container(
+                  child: SizedBox(
                       width: double.infinity,
                       height: sH * .28,
                       child: GridView.builder(
@@ -199,50 +212,57 @@ class HomePage extends StatelessWidget {
                             left: 0, top: 14), // padding around the grid
                         itemCount: coms.length, // total number of items
                         itemBuilder: (context, index) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: NetworkImage(
-                                      coms[index].imgPoster,
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetailPage(index: index)));
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage(
+                                        coms[index].imgPoster,
+                                      ),
                                     ),
+                                    borderRadius: BorderRadius.circular(15),
                                   ),
-                                  borderRadius: BorderRadius.circular(15),
+                                  height: sH * 0.17,
+                                  width: sW * 0.3,
                                 ),
-                                height: sH * 0.17,
-                                width: sW * 0.3,
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 8.0),
-                                child: ProText(
-                                    lines: 1,
-                                    text: 'Spider-Man',
-                                    textStyle: TextStyle(
-                                        color: Colors.amber,
-                                        fontFamily: 'Rabar',
-                                        fontSize: 12)),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8),
-                                child: Flexible(
-                                  child: RichText(
-                                    textScaler: TextScaler.linear(
-                                        ScaleSize.textScaleFactor(context)),
-                                    overflow: TextOverflow.ellipsis,
-                                    text: const TextSpan(
-                                      text: 'ڕۆمانس ، سەرکێشی',
-                                      style: TextStyle(
+                                const Padding(
+                                  padding: EdgeInsets.only(top: 8.0),
+                                  child: ProText(
+                                      lines: 1,
+                                      text: 'Spider-Man',
+                                      textStyle: TextStyle(
+                                          color: Colors.amber,
                                           fontFamily: 'Rabar',
-                                          color: Colors.white54,
-                                          fontSize: 12),
+                                          fontSize: 12)),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8),
+                                  child: Flexible(
+                                    child: RichText(
+                                      textScaler: TextScaler.linear(
+                                          ScaleSize.textScaleFactor(context)),
+                                      overflow: TextOverflow.ellipsis,
+                                      text: const TextSpan(
+                                        text: 'ڕۆمانس ، سەرکێشی',
+                                        style: TextStyle(
+                                            fontFamily: 'Rabar',
+                                            color: Colors.white54,
+                                            fontSize: 12),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           );
                         },
                       )),
