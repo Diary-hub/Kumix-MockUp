@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_zanko/screens/homePage.dart';
 import 'package:project_zanko/screens/splashScreen.dart';
 
 void main() {
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
           onSurface: Color(0xff848486),
         ),
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

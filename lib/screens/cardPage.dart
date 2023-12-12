@@ -1,12 +1,9 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/simpleButton.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
-import 'package:project_zanko/screens/comicsPage.dart';
-import 'package:project_zanko/screens/profilePage.dart';
 
 class CardPage extends StatelessWidget {
   const CardPage({super.key});
@@ -226,58 +223,6 @@ class CardPage extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: Directionality(
-        textDirection: TextDirection.rtl,
-        child: GNav(
-            activeColor: Colors.amber,
-            onTabChange: (index) {
-              if (index == 1) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ComicPage()));
-              } //Comics
-              else if (index == 2) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const CardPage()));
-              } //Fav
-              else if (index == 3) {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfilePage()));
-              }
-              //Acc
-            },
-            textStyle: const TextStyle(fontFamily: "Rabar"),
-            tabs: const [
-              GButton(
-                icon: Icons.home_outlined,
-                text: '    سەرەکی',
-              ),
-              GButton(
-                icon: Icons.library_books_outlined,
-                text: '  کۆمیکس',
-              ),
-              GButton(
-                icon: Icons.favorite_outline,
-                text: '    دڵخوازەکان',
-              ),
-              GButton(
-                icon: Icons.person_3_outlined,
-                text: '    هەژمار',
-              )
-            ]),
-      ),
-      // floatingActionButton: FloatingActionButton(
-      //     shape: const RoundedRectangleBorder(
-      //         borderRadius: BorderRadius.all(Radius.circular(30))),
-      //     elevation: 30,
-      //     splashColor: Colors.white,
-      //     backgroundColor: Colors.amber,
-      //     onPressed: () {},
-      //     child: const Icon(
-      //       Icons.add_shopping_cart_sharp,
-      //       color: Colors.black,
-      //     )),
     );
   }
 }

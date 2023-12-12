@@ -1,16 +1,18 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/actionComics.dart';
-import 'package:project_zanko/screens/cardPage.dart';
-import 'package:project_zanko/screens/profilePage.dart';
 
-class ComicPage extends StatelessWidget {
+class ComicPage extends StatefulWidget {
   const ComicPage({super.key});
 
+  @override
+  State<ComicPage> createState() => _ComicPageState();
+}
+
+class _ComicPageState extends State<ComicPage> {
   @override
   Widget build(BuildContext context) {
     final double sW = MediaQuery.of(context).size.width;
@@ -110,47 +112,6 @@ class ComicPage extends StatelessWidget {
             rasm:
                 'https://media.tenor.com/5StcGSZp1JIAAAAC/spiderman-spider-man.gif'),
       ]),
-      bottomNavigationBar: Directionality(
-        textDirection: TextDirection.rtl,
-        child: GNav(
-            activeColor: Colors.amber,
-            onTabChange: (index) {
-              if (index == 1) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ComicPage()));
-              } //Comics
-              else if (index == 2) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const CardPage()));
-              } //Fav
-              else if (index == 3) {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfilePage()));
-              }
-              //Acc
-            },
-            textStyle: const TextStyle(fontFamily: "Rabar"),
-            tabs: const [
-              GButton(
-                icon: Icons.home_outlined,
-                text: '    سەرەکی',
-              ),
-              GButton(
-                icon: Icons.library_books_outlined,
-                text: '  کۆمیکس',
-              ),
-              GButton(
-                icon: Icons.favorite_outline,
-                text: '    دڵخوازەکان',
-              ),
-              GButton(
-                icon: Icons.person_3_outlined,
-                text: '    هەژمار',
-              )
-            ]),
-      ),
     );
   }
 }

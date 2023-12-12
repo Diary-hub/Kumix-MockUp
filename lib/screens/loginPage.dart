@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/inputField.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/simpleButton.dart';
+import 'package:project_zanko/controller.dart';
 import 'package:project_zanko/helpers/scrollBehavior.dart';
-import 'package:project_zanko/screens/homePage.dart';
 import 'package:project_zanko/screens/signupPage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -98,7 +98,7 @@ class LoginPage extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()));
+                            builder: (context) => const RouteController()));
                   },
                 ),
                 SizedBox(height: sH * .01),
