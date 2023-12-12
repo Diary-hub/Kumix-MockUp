@@ -548,6 +548,7 @@ const List<Comic> random = [
       imgPoster:
           'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/fantastic-four-60-cover.jpg?q=50&fit=crop&dpr=1.5')
 ];
+
 const List<Comic> week = [
   Comic(
       price: 20.99,
