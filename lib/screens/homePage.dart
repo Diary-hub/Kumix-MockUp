@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
               height: sH * 0.34,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: coms.length, // Number of items in the list
+                itemCount: random.length, // Number of items in the list
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
@@ -95,7 +95,7 @@ class HomePage extends StatelessWidget {
                     child: ComicCardRecomendation(
                       sW: sW,
                       sH: sH,
-                      ccomic: coms[index],
+                      ccomic: random[index],
                     ),
                   );
                 },
