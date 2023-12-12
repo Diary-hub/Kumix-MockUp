@@ -6,6 +6,7 @@ import 'package:project_zanko/screens/detailsPage.dart';
 import 'package:project_zanko/screens/homePage.dart';
 // ignore: unused_import
 import 'package:project_zanko/screens/loginPage.dart';
+import 'package:project_zanko/screens/profile.dart';
 import 'package:project_zanko/screens/signupPage.dart';
 import 'package:project_zanko/screens/splashScreen.dart';
 
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           onSurface: Color(0xff848486),
         ),
       ),
-      home: const SplashScreen(),
+      home: const ProfilePage(),
     );
   }
 }
