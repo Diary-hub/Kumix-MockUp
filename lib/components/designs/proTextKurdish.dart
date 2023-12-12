@@ -23,7 +23,7 @@ class ProTextKurdish extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: SizedBox(
-        width: sW,
+        // width: sW,
         child: RichText(
           maxLines: lines,
           overflow: TextOverflow.ellipsis,

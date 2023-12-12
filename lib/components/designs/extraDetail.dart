@@ -20,6 +20,8 @@ class ExtraDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: sH * 0.02),
         ProTextKurdish(
