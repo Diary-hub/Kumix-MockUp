@@ -5,7 +5,7 @@ import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/actionComics.dart';
 import 'package:project_zanko/screens/card.dart';
-import 'package:project_zanko/screens/profile.dart';
+import 'package:project_zanko/screens/profilePage.dart';
 
 class ComicPage extends StatelessWidget {
   const ComicPage({super.key});

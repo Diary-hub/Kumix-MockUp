@@ -10,7 +10,7 @@ import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/card.dart';
 import 'package:project_zanko/screens/comicsPage.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
-import 'package:project_zanko/screens/profile.dart';
+import 'package:project_zanko/screens/profilePage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
