@@ -4,11 +4,12 @@ import 'package:project_zanko/components/designs/extraDetail.dart';
 import 'package:project_zanko/components/designs/proText.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/simpleButton.dart';
-import 'package:project_zanko/datas/database.dart';
+import 'package:project_zanko/datas/comics.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage({super.key, required this.index});
+  DetailPage({super.key, required this.index, required this.db});
   int index;
+  List<Comic> db;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class DetailPage extends StatelessWidget {
             lines: 1,
             rang: Colors.amber,
             sW: sW,
-            text: coms[index].titleEN),
+            text: db[index].titleEN),
       ),
       body: Stack(children: [
         SingleChildScrollView(
@@ -44,14 +45,14 @@ class DetailPage extends StatelessWidget {
                           ProTextKurdish(
                             lines: 1,
                             sW: sW * 0.5,
-                            text: coms[index].title,
+                            text: db[index].title,
                             rang: Colors.white,
                             fontsize: 22,
                           ),
                           ProTextKurdish(
                             lines: 1,
                             sW: sW * 0.5,
-                            text: "لە لایەن: ${coms[index].company}",
+                            text: "لە لایەن: ${db[index].company}",
                             rang: Colors.grey,
                             fontsize: 14,
                           ),
@@ -61,7 +62,7 @@ class DetailPage extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text("${coms[index].rating}"),
+                                Text("${db[index].rating}"),
                                 SizedBox(width: sW * 0.01),
                                 const Icon(
                                   Icons.star,
@@ -96,7 +97,7 @@ class DetailPage extends StatelessWidget {
                                   sH: sH * 0.05,
                                   sW: sW * 0.2,
                                   radius: 100,
-                                  title: '${coms[index].price}\$',
+                                  title: '${db[index].price}\$',
                                   fontWeight: FontWeight.bold,
                                   titleFontSize: 16,
                                   onPressed: () {}),
@@ -120,7 +121,7 @@ class DetailPage extends StatelessWidget {
                             ),
                             borderRadius: BorderRadius.circular(17),
                             image: DecorationImage(
-                                image: NetworkImage(coms[index].imgPoster),
+                                image: NetworkImage(db[index].imgPoster),
                                 fit: BoxFit.fill),
                           ),
                         ),
@@ -157,7 +158,7 @@ class DetailPage extends StatelessWidget {
                           ProText(
                             lines: 3,
                             textStyle: const TextStyle(fontFamily: 'Rabar'),
-                            text: coms[index].description,
+                            text: db[index].description,
                           )
                         ],
                       ),
@@ -213,7 +214,7 @@ class DetailPage extends StatelessWidget {
                                     mainAxisExtent: 50,
                                     childAspectRatio: 1,
                                     crossAxisCount: 3),
-                            itemCount: coms[index].categories.length,
+                            itemCount: db[index].categories.length,
                             itemBuilder: (context, element) {
                               return Padding(
                                 padding: const EdgeInsets.all(9.0),
@@ -226,7 +227,7 @@ class DetailPage extends StatelessWidget {
                                     child: ProTextKurdish(
                                         fontsize: 14,
                                         rang: Colors.white,
-                                        text: coms[index]
+                                        text: db[index]
                                             .categories
                                             .elementAt(element),
                                         sW: (sW + sH) * 0.05,
@@ -247,25 +248,25 @@ class DetailPage extends StatelessWidget {
                         ),
                         ExtraDetail(
                           bigTitle: "ناوی کۆمیک",
-                          smallTitle: coms[index].title,
+                          smallTitle: db[index].title,
                           sH: sH,
                           sW: sW,
                         ),
                         ExtraDetail(
                           bigTitle: "ناوی کۆمیک بە ئینگلیزی",
-                          smallTitle: coms[index].titleEN,
+                          smallTitle: db[index].titleEN,
                           sH: sH,
                           sW: sW,
                         ),
                         ExtraDetail(
                           bigTitle: "ساڵی دەرچوون",
-                          smallTitle: coms[index].date,
+                          smallTitle: db[index].date,
                           sH: sH,
                           sW: sW,
                         ),
                         ExtraDetail(
                           bigTitle: "نووسەر",
-                          smallTitle: coms[index].author,
+                          smallTitle: db[index].author,
                           sH: sH,
                           sW: sW,
                         ),

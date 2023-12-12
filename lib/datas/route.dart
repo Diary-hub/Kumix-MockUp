@@ -7,7 +7,7 @@ import 'package:project_zanko/screens/profilePage.dart';
 class BottomNavController extends GetxController {
   RxInt index = 0.obs;
 
-  var pages = [
+  var pages = const [
     HomePage(),
     ComicPage(),
     CardPage(),

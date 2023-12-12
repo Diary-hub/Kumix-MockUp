@@ -1,12 +1,14 @@
+// ignore_for_file: file_names, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/proText.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
-import 'package:project_zanko/datas/database.dart';
+import 'package:project_zanko/datas/comics.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
 
-class ActionsPage extends StatelessWidget {
-  const ActionsPage({super.key});
+class CategoriesPage extends StatelessWidget {
+  CategoriesPage({super.key, required this.db});
+  List<Comic> db;
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +63,15 @@ class ActionsPage extends StatelessWidget {
               crossAxisSpacing: 65.0, // spacing between columns
             ),
             padding: const EdgeInsets.only(left: 0, top: 14),
-            itemCount: coms.length, // total number of items
+            itemCount: db.length, // total number of items
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DetailPage(index: index)));
+                      builder: (context) => DetailPage(
+                            index: index,
+                            db: db,
+                          )));
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,7 +80,7 @@ class ActionsPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(coms[index].imgPoster),
+                          image: NetworkImage(db[index].imgPoster),
                         ),
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -83,10 +88,10 @@ class ActionsPage extends StatelessWidget {
                       width: sW * 0.3,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 8.0),
+                      padding: const EdgeInsets.only(top: 8.0),
                       child: ProText(
                           lines: 1,
-                          text: coms[index].title,
+                          text: db[index].title,
                           textStyle: const TextStyle(
                               color: Colors.amber,
                               fontFamily: 'Rabar',

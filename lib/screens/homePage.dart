@@ -89,17 +89,20 @@ class _HomePageState extends State<HomePage> {
                 height: sH * 0.34,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: coms.length, // Number of items in the list
+                  itemCount: random.length, // Number of items in the list
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DetailPage(index: index)));
+                            builder: (context) => DetailPage(
+                                  index: index,
+                                  db: random,
+                                )));
                       },
                       child: ComicCardRecomendation(
                         sW: sW,
                         sH: sH,
-                        ccomic: coms[index],
+                        ccomic: random[index],
                       ),
                     );
                   },
@@ -137,7 +140,10 @@ class _HomePageState extends State<HomePage> {
                     return GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DetailPage(index: index)));
+                            builder: (context) => DetailPage(
+                                  index: index,
+                                  db: coms,
+                                )));
                       },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -226,13 +232,15 @@ class _HomePageState extends State<HomePage> {
                             left: 0,
                             top: 14,
                             right: sW * 0.05), // padding around the grid
-                        itemCount: coms.length, // total number of items
+                        itemCount: week.length, // total number of items
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      DetailPage(index: index)));
+                                  builder: (context) => DetailPage(
+                                        index: index,
+                                        db: week,
+                                      )));
                             },
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

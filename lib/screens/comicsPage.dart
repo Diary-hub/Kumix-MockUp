@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
+import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
-import 'package:project_zanko/screens/actionComics.dart';
+import 'package:project_zanko/screens/categComics.dart';
 
 class ComicPage extends StatefulWidget {
   const ComicPage({super.key});
@@ -83,8 +84,10 @@ class _ComicPageState extends State<ComicPage> {
         ),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const ActionsPage()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CategoriesPage(
+                        db: action,
+                      )));
             },
             sW: sW,
             sH: sH,
@@ -93,8 +96,10 @@ class _ComicPageState extends State<ComicPage> {
                 'https://qph.cf2.quoracdn.net/main-qimg-94b8bf6cd9b3d6bd1025a1cf8cbbd392'),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const ActionsPage()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CategoriesPage(
+                        db: comedy,
+                      )));
             },
             sW: sW,
             sH: sH,
@@ -103,8 +108,10 @@ class _ComicPageState extends State<ComicPage> {
                 'https://qph.cf2.quoracdn.net/main-qimg-9f7819b0ecae14938d5f0459e5e1b852'),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const ActionsPage()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CategoriesPage(
+                        db: romance,
+                      )));
             },
             sW: sW,
             sH: sH,

@@ -135,7 +135,7 @@ const List<Comic> coms = [
           'https://cdn.marvel.com/u/prod/marvel/i/mg/c/80/567065cfebad5/detail.jpg'),
 ];
 
-const List<Comic> Action = [
+const List<Comic> action = [
   Comic(
       price: 25.99,
       company: "مارفڵ",
@@ -547,4 +547,86 @@ const List<Comic> random = [
           'مارک واید و مایک ویرینگۆ لە ڕێگەی POV ی بەڕێوەبەری نوێی PR یان خێزانی یەکەمی مارڤێڵ کە چوار خەیاڵییە دەناسێننەوە.',
       imgPoster:
           'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/fantastic-four-60-cover.jpg?q=50&fit=crop&dpr=1.5')
+];
+const List<Comic> week = [
+  Comic(
+      price: 20.99,
+      company: "مارفڵ",
+      rating: 10,
+      title: 'سپاون',
+      titleEN: "Spawn",
+      author: "Rudy Mancuso",
+      date: "2023",
+      categories: {'ئەکشن'},
+      description:
+          'تۆد مەکفارلین خەونی منداڵی خۆی دەکاتە واقیع وەک دژە پاڵەوان لە یەکێک لە گەورەترین یەکەم کتێبی کۆمیکدا. Spawn #1 کە لەلایەن Image Comics بڵاوکراوەتەوە، لە کاتی نمایشکردنیدا دەستبەجێ زیاتر لە ملیۆنێک دانە فرۆشراوە.',
+      imgPoster:
+          'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/spawn-1-cover.jpg?q=50&fit=crop&dpr=1.5'),
+  Comic(
+      price: 25.99,
+      company: "مارفڵ",
+      rating: 10,
+      title: 'پیاوانی ئێکس : شین',
+      titleEN: "X-Men:Blue",
+      author: "Rudy Mancuso",
+      date: "2015",
+      categories: {'ئەکشن'},
+      description:
+          'ڕەسەنەکان! بەشداری بکەن لە MARVEL GIRL, CYCLOPS, BEAST, ICEMAN و ANGEL کاتێک نازناوی X-MEN وەردەگرنەوە. دوای ڕووداوە جیهان هەژێنەرەکانی IVX، پێنج X-Men ڕەسەن لێرەن بۆ ئەوەی تاوانبارانی گۆڕاو بخەنە بەردەم دادگا و گەڕاندنەوە',
+      imgPoster:
+          'https://cdn.marvel.com/u/prod/marvel/i/mg/7/40/58e7f9a46732d/detail.jpg'),
+  Comic(
+      price: 200.99,
+      company: "Marvel",
+      rating: 9,
+      titleEN: "The Three Jokers!",
+      author: "Sa",
+      date: "12222",
+      title: 'سێ جۆکەرەکە',
+      categories: {'ئەکشن', 'ڕۆمانسی'},
+      description:
+          'باتمان: سێ جۆکەر زنجیرەیەکی سنوورداری کتێبی کۆمیکی ئەمریکییە و لەلایەن کۆمپانیای دی سی کۆمیکسەوە بڵاودەکرێتەوە. جێنشینێکی ڕۆحییە بۆ فیلمەکانی Batman: The Killing Joke و Batman: A Death in the Family.',
+      imgPoster:
+          'https://media.comicbook.com/2018/08/the-three-jokers-movie-version-1129715.jpeg'),
+  Comic(
+      price: 4.00,
+      company: "Marvel",
+      rating: 7.2,
+      titleEN: "The Amazing Spider-Man",
+      author: "بابە تاهیری هەمەدانی",
+      date: "٢٠١٩",
+      title: 'زە ئەمەیزینگ سپایدەرمان',
+      categories: {
+        'ئەکشن',
+        'ڕۆمانسی',
+      },
+      description: 'چیرۆکی پاڵەوانی گەڕەکی باشی پیتەر',
+      imgPoster:
+          'https://static.displate.com/857x1200/displate/2018-08-28/98b1ad53f1f967719f33892118b47534_f4af1db3d356e5349e98b7a15bf80068.jpg'),
+  Comic(
+      price: 12.99,
+      company: "هینمین ئوو",
+      rating: 0,
+      title: 'چاوی هەڵۆ',
+      titleEN: "HawkEye",
+      author: "Rudy Mancuso",
+      date: "2020",
+      categories: {'کۆمیدی'},
+      description:
+          'دەمتوانی فیلمی Hawkeye ی Matt Fraction لەخۆ بگرم. دەمتوانی بیکردایە. بەڵام مات فراکشن پێشتر لەگەڵ تاوانبارانی سێکسیدا ئەو لیستەی تۆمارکردووە',
+      imgPoster:
+          'https://cdn.marvel.com/u/prod/marvel/i/mg/3/e0/61928b8d4d580/clean.jpg'),
+  Comic(
+      price: 12.99,
+      company: "هینمین ئوو",
+      rating: 0,
+      title: 'جەنگی گەلە ئەستێرە',
+      titleEN: "Star Wars",
+      author: "Rudy Mancuso",
+      date: "2020",
+      categories: {'کۆمیدی'},
+      description:
+          'جەیسن ئارۆن و جۆن کاسادەی لەگەڵ مارڤێڵ کۆمیکس پێکەوە کاریان کرد بۆ دروستکردنی ئەم درێژەپێدەرییە لە فیلمی ڕەسەنی جەنگی ئەستێرەکانی ساڵی ١٩٧٧',
+      imgPoster:
+          'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/star-wars-1-cover.jpg?q=50&fit=contain&w=750&h=415&dpr=1.5'),
 ];
