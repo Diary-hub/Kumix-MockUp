@@ -149,32 +149,35 @@ class HomePage extends StatelessWidget {
                           height: sH * 0.17,
                           width: sW * 0.3,
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 8.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
                           child: ProText(
                               lines: 1,
-                              text: 'سپایدەر-مان',
-                              textStyle: TextStyle(
+                              text: coms[index].title,
+                              textStyle: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: 'Rabar',
                                   fontSize: 12)),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8),
-                          child: Flexible(
-                            child: RichText(
-                              textScaler: TextScaler.linear(
-                                  ScaleSize.textScaleFactor(context)),
-                              overflow: TextOverflow.ellipsis,
-                              text: const TextSpan(
-                                text: 'ڕۆمانس, سەرکێشی',
-                                style: TextStyle(
-                                    fontFamily: 'Rabar',
-                                    color: Colors.white54,
-                                    fontSize: 12),
-                              ),
-                            ),
-                          ),
+                          child: ProTextKurdish(
+                              fontsize: 12,
+                              rang: Colors.white54,
+                              text: coms[index]
+                                  .categories
+                                  .toSet()
+                                  .toString()
+                                  .substring(
+                                      1,
+                                      coms[index]
+                                              .categories
+                                              .toSet()
+                                              .toString()
+                                              .length -
+                                          1),
+                              sW: sW * .3,
+                              lines: 1),
                         ),
                       ],
                     ),
@@ -241,32 +244,37 @@ class HomePage extends StatelessWidget {
                                   height: sH * 0.17,
                                   width: sW * 0.3,
                                 ),
-                                const Padding(
-                                  padding: EdgeInsets.only(top: 8.0),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 8.0, right: 8),
                                   child: ProText(
                                       lines: 1,
-                                      text: 'Spider-Man',
-                                      textStyle: TextStyle(
+                                      text: coms[index].title,
+                                      textStyle: const TextStyle(
                                           color: Colors.amber,
                                           fontFamily: 'Rabar',
                                           fontSize: 12)),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8),
-                                  child: Flexible(
-                                    child: RichText(
-                                      textScaler: TextScaler.linear(
-                                          ScaleSize.textScaleFactor(context)),
-                                      overflow: TextOverflow.ellipsis,
-                                      text: const TextSpan(
-                                        text: 'ڕۆمانس ، سەرکێشی',
-                                        style: TextStyle(
-                                            fontFamily: 'Rabar',
-                                            color: Colors.white54,
-                                            fontSize: 12),
-                                      ),
-                                    ),
-                                  ),
+                                  padding:
+                                      const EdgeInsets.only(top: 8, right: 8),
+                                  child: ProTextKurdish(
+                                      fontsize: 12,
+                                      rang: Colors.white54,
+                                      text: coms[index]
+                                          .categories
+                                          .toSet()
+                                          .toString()
+                                          .substring(
+                                              1,
+                                              coms[index]
+                                                      .categories
+                                                      .toSet()
+                                                      .toString()
+                                                      .length -
+                                                  1),
+                                      sW: sW * .3,
+                                      lines: 1),
                                 ),
                               ],
                             ),

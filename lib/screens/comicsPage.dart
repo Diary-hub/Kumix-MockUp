@@ -83,7 +83,7 @@ class ComicPage extends StatelessWidget {
             },
             sW: sW,
             sH: sH,
-            topic: 'ئەکشن',
+            topic: '       ئەکشن',
             rasm:
                 'https://i.pinimg.com/originals/95/b3/cb/95b3cb5797430aa139fd69782179344e.gif'),
         CategoryContainerCard(
@@ -93,7 +93,7 @@ class ComicPage extends StatelessWidget {
             },
             sW: sW,
             sH: sH,
-            topic: 'کۆمیدی',
+            topic: '       کۆمیدی',
             rasm:
                 'https://64.media.tumblr.com/0fc33e24c40e1e43cb1964f2b37cb916/tumblr_mrahsn1iCV1sstysro1_500.gif'),
         CategoryContainerCard(
@@ -103,7 +103,7 @@ class ComicPage extends StatelessWidget {
             },
             sW: sW,
             sH: sH,
-            topic: 'ڕۆمانس',
+            topic: '       ڕۆمانس',
             rasm:
                 'https://31.media.tumblr.com/781150ac1ce6f67f0e19f2fd1698d31d/tumblr_mo717vKaO71s7f354o1_500.gif'),
       ]),
