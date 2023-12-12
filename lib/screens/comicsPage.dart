@@ -4,6 +4,8 @@ import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/actionComics.dart';
+import 'package:project_zanko/screens/card.dart';
+import 'package:project_zanko/screens/profile.dart';
 
 class ComicPage extends StatelessWidget {
   const ComicPage({super.key});
@@ -107,26 +109,46 @@ class ComicPage extends StatelessWidget {
             rasm:
                 'https://31.media.tumblr.com/781150ac1ce6f67f0e19f2fd1698d31d/tumblr_mo717vKaO71s7f354o1_500.gif'),
       ]),
-      bottomNavigationBar: const Directionality(
+      bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
-        child: GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
-          GButton(
-            icon: Icons.home_outlined,
-            text: '    سەرەکی',
-          ),
-          GButton(
-            icon: Icons.library_books_outlined,
-            text: '  کۆمیکس',
-          ),
-          GButton(
-            icon: Icons.favorite_outline,
-            text: '    دڵخوازەکان',
-          ),
-          GButton(
-            icon: Icons.person_3_outlined,
-            text: '    هەژمار',
-          )
-        ]),
+        child: GNav(
+            activeColor: Colors.amber,
+            onTabChange: (index) {
+              if (index == 1) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ComicPage()));
+              } //Comics
+              else if (index == 2) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CardPage()));
+              } //Fav
+              else if (index == 3) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
+              }
+              //Acc
+            },
+            textStyle: TextStyle(fontFamily: "Rabar"),
+            tabs: [
+              GButton(
+                icon: Icons.home_outlined,
+                text: '    سەرەکی',
+              ),
+              GButton(
+                icon: Icons.library_books_outlined,
+                text: '  کۆمیکس',
+              ),
+              GButton(
+                icon: Icons.favorite_outline,
+                text: '    دڵخوازەکان',
+              ),
+              GButton(
+                icon: Icons.person_3_outlined,
+                text: '    هەژمار',
+              )
+            ]),
       ),
     );
   }

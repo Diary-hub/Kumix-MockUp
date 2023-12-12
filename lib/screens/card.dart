@@ -5,6 +5,7 @@ import 'package:project_zanko/components/designs/simpleButton.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/comicsPage.dart';
+import 'package:project_zanko/screens/profile.dart';
 
 class CardPage extends StatelessWidget {
   const CardPage({super.key});
@@ -159,14 +160,23 @@ class CardPage extends StatelessWidget {
       bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
         child: GNav(
+            activeColor: Colors.amber,
             onTabChange: (index) {
               if (index == 1) {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const ComicPage()));
               } //Comics
               else if (index == 2) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CardPage()));
               } //Fav
-              else if (index == 3) {} //Acc
+              else if (index == 3) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
+              }
+              //Acc
             },
             textStyle: const TextStyle(fontFamily: "Rabar"),
             tabs: const [
