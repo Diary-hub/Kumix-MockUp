@@ -7,8 +7,10 @@ import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/sectionTitleAndSub.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
+import 'package:project_zanko/screens/card.dart';
 import 'package:project_zanko/screens/comicsPage.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
+import 'package:project_zanko/screens/profile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -290,14 +292,23 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
         child: GNav(
+            activeColor: Colors.amber,
             onTabChange: (index) {
               if (index == 1) {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const ComicPage()));
               } //Comics
               else if (index == 2) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CardPage()));
               } //Fav
-              else if (index == 3) {} //Acc
+              else if (index == 3) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
+              }
+              //Acc
             },
             textStyle: const TextStyle(fontFamily: "Rabar"),
             tabs: const [
@@ -316,7 +327,7 @@ class HomePage extends StatelessWidget {
               GButton(
                 icon: Icons.person_3_outlined,
                 text: '    هەژمار',
-              )
+              ),
             ]),
       ),
     );
