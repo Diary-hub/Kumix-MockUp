@@ -5,7 +5,7 @@ import 'package:project_zanko/components/designs/simpleButton.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/comicsPage.dart';
-import 'package:project_zanko/screens/profile.dart';
+import 'package:project_zanko/screens/profilePage.dart';
 
 class CardPage extends StatelessWidget {
   const CardPage({super.key});

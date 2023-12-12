@@ -82,12 +82,12 @@ class ActionsPage extends StatelessWidget {
                       height: sH * .17,
                       width: sW * 0.3,
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(top: 8.0),
                       child: ProText(
                           lines: 1,
-                          text: 'Spider-Man',
-                          textStyle: TextStyle(
+                          text: coms[index].title,
+                          textStyle: const TextStyle(
                               color: Colors.amber,
                               fontFamily: 'Rabar',
                               fontSize: 12)),
