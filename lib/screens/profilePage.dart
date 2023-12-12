@@ -1,10 +1,8 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/extraDetail.dart';
 import 'package:project_zanko/components/designs/proText.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
-import 'package:project_zanko/screens/comicsPage.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -129,38 +127,6 @@ class ProfilePage extends StatelessWidget {
             )
           ],
         ),
-      ),
-      bottomNavigationBar: Directionality(
-        textDirection: TextDirection.rtl,
-        child: GNav(
-            onTabChange: (index) {
-              if (index == 1) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ComicPage()));
-              } //Comics
-              else if (index == 2) {
-              } //Fav
-              else if (index == 3) {} //Acc
-            },
-            textStyle: const TextStyle(fontFamily: "Rabar"),
-            tabs: const [
-              GButton(
-                icon: Icons.home_outlined,
-                text: '    سەرەکی',
-              ),
-              GButton(
-                icon: Icons.library_books_outlined,
-                text: '  کۆمیکس',
-              ),
-              GButton(
-                icon: Icons.favorite_outline,
-                text: '    دڵخوازەکان',
-              ),
-              GButton(
-                icon: Icons.person_3_outlined,
-                text: '    هەژمار',
-              )
-            ]),
       ),
     );
   }
