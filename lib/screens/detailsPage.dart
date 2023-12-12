@@ -34,6 +34,7 @@ class DetailPage extends StatelessWidget {
         //         Theme.of(context).colorScheme.secondary
         //       ])),
         // ),
+        centerTitle: true,
         title: ProTextKurdish(
             fontsize: 25,
             lines: 1,
@@ -48,72 +49,74 @@ class DetailPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        ProTextKurdish(
-                          lines: 1,
-                          sW: sW * 0.5,
-                          text: coms[index].title,
-                          rang: Colors.white,
-                          fontsize: 26,
-                        ),
-                        ProTextKurdish(
-                          lines: 1,
-                          sW: sW * 0.5,
-                          text: "لە لایەن: ${coms[index].company}",
-                          rang: Colors.grey,
-                          fontsize: 14,
-                        ),
-                        SizedBox(height: sH * 0.02),
-                        Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text("${coms[index].rating}"),
-                              SizedBox(width: sW * 0.01),
-                              const Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              ),
-                            ],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          ProTextKurdish(
+                            lines: 1,
+                            sW: sW * 0.5,
+                            text: coms[index].title,
+                            rang: Colors.white,
+                            fontsize: 22,
                           ),
-                        ),
-                        SizedBox(height: sH * 0.07),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: Colors.white54,
-                                    )),
-                                child: const Padding(
-                                  padding: EdgeInsets.all(2.0),
-                                  child: Icon(
-                                    Icons.share,
-                                    size: 25,
+                          ProTextKurdish(
+                            lines: 1,
+                            sW: sW * 0.5,
+                            text: "لە لایەن: ${coms[index].company}",
+                            rang: Colors.grey,
+                            fontsize: 14,
+                          ),
+                          SizedBox(height: sH * 0.02),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text("${coms[index].rating}"),
+                                SizedBox(width: sW * 0.01),
+                                const Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: sH * 0.07),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        color: Colors.white54,
+                                      )),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(2.0),
+                                    child: Icon(
+                                      Icons.share,
+                                      size: 25,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SimpleButton(
-                                sH: sH * 0.05,
-                                sW: sW * 0.2,
-                                radius: 100,
-                                title: '${coms[index].price}\$',
-                                fontWeight: FontWeight.bold,
-                                titleFontSize: 16,
-                                onPressed: () {}),
-                          ],
-                        )
-                      ],
+                              SimpleButton(
+                                  sH: sH * 0.05,
+                                  sW: sW * 0.2,
+                                  radius: 100,
+                                  title: '${coms[index].price}\$',
+                                  fontWeight: FontWeight.bold,
+                                  titleFontSize: 16,
+                                  onPressed: () {}),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Padding(

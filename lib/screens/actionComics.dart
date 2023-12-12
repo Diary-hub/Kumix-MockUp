@@ -45,16 +45,18 @@ class ActionsPage extends StatelessWidget {
           lines: 1,
         ),
       ),
-      body: Container(
+      body: SizedBox(
         width: sW * 1,
         height: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.only(top: 20, left: 25),
+          padding: const EdgeInsets.only(
+            top: 20,
+          ),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               // number of items in each row
-              mainAxisExtent: sH * 0.24,
+              mainAxisExtent: sH * 0.26,
               mainAxisSpacing: 10, // spacing between rows
               crossAxisSpacing: 65.0, // spacing between columns
             ),
@@ -67,7 +69,7 @@ class ActionsPage extends StatelessWidget {
                       builder: (context) => DetailPage(index: index)));
                 },
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
                       decoration: BoxDecoration(
