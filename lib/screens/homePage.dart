@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: NetworkImage(
-                                        coms[index].imgPoster,
+                                        week[index].imgPoster,
                                       ),
                                     ),
                                     borderRadius: BorderRadius.circular(15),
@@ -263,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                                       const EdgeInsets.only(top: 8.0, right: 0),
                                   child: ProText(
                                       lines: 1,
-                                      text: coms[index].title,
+                                      text: week[index].title,
                                       textStyle: const TextStyle(
                                           color: Colors.amber,
                                           fontFamily: 'Rabar',
@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                                   child: ProTextKurdish(
                                       fontsize: 12,
                                       rang: Colors.white54,
-                                      text: coms[index]
+                                      text: week[index]
                                           .categories
                                           .toSet()
                                           .toString()
