@@ -17,8 +17,29 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        surfaceTintColor: Theme.of(context).colorScheme.background,
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        surfaceTintColor: Theme.of(context).colorScheme.onBackground,
+        foregroundColor: Theme.of(context).colorScheme.background,
+
+        shadowColor: Theme.of(context).colorScheme.secondary,
+        elevation: 10,
+        // flexibleSpace: Container(
+        //   decoration: BoxDecoration(
+        //       gradient: LinearGradient(
+        //           tileMode: TileMode.clamp,
+        //           begin: Alignment.bottomCenter,
+        //           end: Alignment.topCenter,
+        //           colors: <Color>[
+        //         Theme.of(context).colorScheme.secondary,
+        //         Theme.of(context).colorScheme.secondary
+        //       ])),
+        // ),
+        title: ProTextKurdish(
+            fontsize: 25,
+            lines: 1,
+            rang: Theme.of(context).colorScheme.onBackground,
+            sW: sW,
+            text: coms[index].titleEN),
       ),
       body: Stack(children: [
         SingleChildScrollView(

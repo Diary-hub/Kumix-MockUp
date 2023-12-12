@@ -106,7 +106,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () {},
                   child: ProTextKurdish(
                     lines: 1,
-                    sW: sW * 0.37,
+                    sW: sW * 0.39,
                     text: "وشەی تێپەڕت لەبیر کردووە؟",
                     rang: Theme.of(context).colorScheme.secondary,
                     fontsize: 15,

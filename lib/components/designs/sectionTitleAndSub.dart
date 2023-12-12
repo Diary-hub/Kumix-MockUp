@@ -48,7 +48,7 @@ class SectionTitleAndSub extends StatelessWidget {
                   ),
                   ProTextKurdish(
                       lines: 1,
-                      sW: sW * 0.08,
+                      sW: sW * 0.085,
                       fontsize: 16,
                       rang: Colors.white54,
                       text: "زیاتر ببینە"),

@@ -44,7 +44,7 @@ const List<Comic> coms = [
       price: 200.99,
       company: "Marvel",
       rating: 9,
-      titleEN: "BOIT",
+      titleEN: "The Three Jokers!",
       author: "Sa",
       date: "12222",
       title: 'سێ جۆکەرەکە',

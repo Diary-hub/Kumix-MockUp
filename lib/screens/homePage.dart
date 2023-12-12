@@ -7,6 +7,7 @@ import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/sectionTitleAndSub.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
+import 'package:project_zanko/screens/comicsPage.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -108,7 +109,7 @@ class HomePage extends StatelessWidget {
         ),
         SizedBox(
           width: sW * 0.1,
-          height: 400,
+          height: sH * 0.56,
           child: Directionality(
             textDirection: TextDirection.rtl,
             child: Padding(
@@ -188,7 +189,7 @@ class HomePage extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          height: sH * .37,
+          height: sH * .38,
           decoration: const BoxDecoration(color: Colors.white10),
           child: Padding(
             padding: const EdgeInsets.only(top: 10),
@@ -196,7 +197,7 @@ class HomePage extends StatelessWidget {
               children: [
                 SectionTitleAndSub(
                     sH: sH,
-                    sW: sW * 1.7,
+                    sW: sW * 1.72,
                     title: 'کۆمیکی حەفتانە',
                     subtitle: 'کۆمیکی ئەم حەفتەیە لە دەست مەدە'),
                 Directionality(
@@ -212,8 +213,10 @@ class HomePage extends StatelessWidget {
                           mainAxisSpacing: 0.0, // spacing between rows
                           crossAxisSpacing: 00.0, // spacing between columns
                         ),
-                        padding: const EdgeInsets.only(
-                            left: 0, top: 14), // padding around the grid
+                        padding: EdgeInsets.only(
+                            left: 0,
+                            top: 14,
+                            right: sW * 0.05), // padding around the grid
                         itemCount: coms.length, // total number of items
                         itemBuilder: (context, index) {
                           return GestureDetector(
@@ -276,26 +279,37 @@ class HomePage extends StatelessWidget {
           ),
         )
       ]),
-      bottomNavigationBar: const Directionality(
+      bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
-        child: GNav(textStyle: TextStyle(fontFamily: "Rabar"), tabs: [
-          GButton(
-            icon: Icons.home_outlined,
-            text: '    سەرەکی',
-          ),
-          GButton(
-            icon: Icons.library_books_outlined,
-            text: '  کۆمیکس',
-          ),
-          GButton(
-            icon: Icons.favorite_outline,
-            text: '    دڵخوازەکان',
-          ),
-          GButton(
-            icon: Icons.person_3_outlined,
-            text: '    هەژمار',
-          )
-        ]),
+        child: GNav(
+            onTabChange: (index) {
+              if (index == 1) {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ComicPage()));
+              } //Comics
+              else if (index == 2) {
+              } //Fav
+              else if (index == 3) {} //Acc
+            },
+            textStyle: const TextStyle(fontFamily: "Rabar"),
+            tabs: const [
+              GButton(
+                icon: Icons.home_outlined,
+                text: '    سەرەکی',
+              ),
+              GButton(
+                icon: Icons.library_books_outlined,
+                text: '  کۆمیکس',
+              ),
+              GButton(
+                icon: Icons.favorite_outline,
+                text: '    دڵخوازەکان',
+              ),
+              GButton(
+                icon: Icons.person_3_outlined,
+                text: '    هەژمار',
+              )
+            ]),
       ),
     );
   }
