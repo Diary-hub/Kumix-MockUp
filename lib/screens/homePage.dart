@@ -7,7 +7,7 @@ import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/components/designs/sectionTitleAndSub.dart';
 import 'package:project_zanko/datas/database.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
-import 'package:project_zanko/screens/card.dart';
+import 'package:project_zanko/screens/cardPage.dart';
 import 'package:project_zanko/screens/comicsPage.dart';
 import 'package:project_zanko/screens/detailsPage.dart';
 import 'package:project_zanko/screens/profilePage.dart';
@@ -162,7 +162,7 @@ class HomePage extends StatelessWidget {
                                   fontSize: 12)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 8),
+                          padding: const EdgeInsets.only(top: 8, left: 18),
                           child: ProTextKurdish(
                               fontsize: 12,
                               rang: Colors.white54,
@@ -248,7 +248,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8.0, right: 8),
+                                      const EdgeInsets.only(top: 8.0, right: 0),
                                   child: ProText(
                                       lines: 1,
                                       text: coms[index].title,
@@ -259,7 +259,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 8, right: 8),
+                                      const EdgeInsets.only(top: 8, left: 18),
                                   child: ProTextKurdish(
                                       fontsize: 12,
                                       rang: Colors.white54,

@@ -12,6 +12,7 @@ class SimpleButton extends StatelessWidget {
     required this.fontWeight,
     required this.titleFontSize,
     required this.onPressed,
+    this.color = const Color(0xff0df5e3),
   });
 
   final double sH;
@@ -21,6 +22,7 @@ class SimpleButton extends StatelessWidget {
   final double titleFontSize;
   final FontWeight fontWeight;
   final Function() onPressed;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -28,8 +30,7 @@ class SimpleButton extends StatelessWidget {
       width: sW,
       child: TextButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(
-              Theme.of(context).colorScheme.onSecondary),
+          backgroundColor: MaterialStatePropertyAll(color),
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius),

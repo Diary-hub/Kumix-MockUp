@@ -2,8 +2,8 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/datas/comics.dart';
-import 'package:project_zanko/helpers/fontScalor.dart';
 
 class ComicCardRecomendation extends StatelessWidget {
   const ComicCardRecomendation({
@@ -60,107 +60,66 @@ class ComicCardRecomendation extends StatelessWidget {
               ),
             ),
             // Content
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: sW * 0.45,
-                        child: Flexible(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              RichText(
-                                textScaler: TextScaler.linear(
-                                    ScaleSize.textScaleFactor(context)),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                text: TextSpan(
-                                  text: ccomic.title,
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontFamily: 'Rabar',
-                                      fontWeight: FontWeight.w900),
-                                ),
-                              ),
-                            ],
-                          ),
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 30),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProTextKurdish(
+                            fontsize: 16,
+                            rang: Colors.white,
+                            text: ccomic.title,
+                            sW: sW,
+                            lines: 1),
+                        SizedBox(
+                          width: sW * 0.4,
+                          child: ProTextKurdish(
+                              fontsize: 12,
+                              rang: Colors.white54,
+                              text: ccomic.categories
+                                  .toSet()
+                                  .toString()
+                                  .substring(
+                                      1,
+                                      ccomic.categories
+                                              .toSet()
+                                              .toString()
+                                              .length -
+                                          1),
+                              sW: sW,
+                              lines: 1),
                         ),
-                      ),
-                      Flexible(
-                        child: RichText(
-                          textScaler: TextScaler.linear(
-                              ScaleSize.textScaleFactor(context)),
-                          overflow: TextOverflow.ellipsis,
-                          text: TextSpan(
-                            text: ccomic.categories
-                                .toSet()
-                                .toString()
-                                .substring(
-                                    1,
-                                    ccomic.categories
-                                            .toSet()
-                                            .toString()
-                                            .length -
-                                        1),
-                            style: const TextStyle(
-                              color: Colors.white54,
-                              fontSize: 12,
-                              fontFamily: 'Rabar',
-                            ),
-                          ),
+                        SizedBox(height: sH * 0.025),
+                        ProTextKurdish(
+                            fontsize: 15,
+                            rang: Colors.white,
+                            text: 'کورتە',
+                            sW: sW,
+                            lines: 1),
+                        SizedBox(
+                          height: sH * 0.01,
                         ),
-                      ),
-                      SizedBox(height: sH * 0.025),
-                      Text(
-                        'کورتە',
-                        textScaler: TextScaler.linear(
-                            ScaleSize.textScaleFactor(context)),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Rabar',
-                          fontWeight: FontWeight.w800,
+                        SizedBox(
+                          width: sW * 0.4,
+                          height: sH * 0.1,
+                          child: ProTextKurdish(
+                              fontsize: 12,
+                              rang: Colors.white54,
+                              text: ccomic.description,
+                              sW: sW,
+                              lines: 5),
                         ),
-                      ),
-                      SizedBox(
-                        height: sH * 0.01,
-                      ),
-                      SizedBox(
-                        width: sW * 0.4,
-                        height: sH * 0.1,
-                        child: Flexible(
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: RichText(
-                              textDirection: TextDirection.rtl,
-                              textScaler: TextScaler.linear(
-                                  ScaleSize.textScaleFactor(context)),
-                              maxLines: 5,
-                              overflow: TextOverflow.ellipsis,
-                              text: TextSpan(
-                                text: ccomic.description,
-                                style: const TextStyle(
-                                  color: Colors.white54,
-                                  fontSize: 12,
-                                  fontFamily: 'Rabar',
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(width: sW * 0.05),
-              ],
+                  SizedBox(width: sW * 0.05),
+                ],
+              ),
             ),
           ],
         ),

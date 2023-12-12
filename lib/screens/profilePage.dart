@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/extraDetail.dart';
@@ -22,9 +23,14 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              radius: (sW + sH) * 0.07,
-              backgroundColor: Colors.white,
-              backgroundImage: const AssetImage('assets/images/login/img.jpg'),
+              radius: (sW + sH) * 0.072,
+              backgroundColor: Colors.amber,
+              child: CircleAvatar(
+                radius: (sW + sH) * 0.07,
+                backgroundColor: Colors.amber,
+                backgroundImage:
+                    const AssetImage('assets/images/login/img.jpg'),
+              ),
             ),
             SizedBox(height: sH * 0.02),
             const ProText(
@@ -63,7 +69,7 @@ class ProfilePage extends StatelessWidget {
                     const SizedBox(
                       height: 100,
                       child: VerticalDivider(
-                        color: Colors.white54,
+                        color: Colors.amber,
                         endIndent: 20,
                         indent: 20,
                         thickness: 2,

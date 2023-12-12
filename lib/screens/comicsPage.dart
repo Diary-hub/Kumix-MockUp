@@ -1,10 +1,11 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_zanko/components/designs/categoryContainerCard.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 import 'package:project_zanko/helpers/fontScalor.dart';
 import 'package:project_zanko/screens/actionComics.dart';
-import 'package:project_zanko/screens/card.dart';
+import 'package:project_zanko/screens/cardPage.dart';
 import 'package:project_zanko/screens/profilePage.dart';
 
 class ComicPage extends StatelessWidget {
@@ -72,7 +73,7 @@ class ComicPage extends StatelessWidget {
               ProTextKurdish(
                   lines: 1,
                   sW: sW * 0.5,
-                  fontsize: 20,
+                  fontsize: 25,
                   rang: Colors.white,
                   text: 'ژانەری دڵخوازت هەڵبژێرە')
             ],
@@ -80,34 +81,34 @@ class ComicPage extends StatelessWidget {
         ),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ActionsPage()));
             },
             sW: sW,
             sH: sH,
-            topic: '       ئەکشن',
+            topic: 'ئەکشن',
             rasm:
-                'https://i.pinimg.com/originals/95/b3/cb/95b3cb5797430aa139fd69782179344e.gif'),
+                'https://qph.cf2.quoracdn.net/main-qimg-94b8bf6cd9b3d6bd1025a1cf8cbbd392'),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ActionsPage()));
             },
             sW: sW,
             sH: sH,
-            topic: '       کۆمیدی',
+            topic: 'کۆمیدی',
             rasm:
-                'https://64.media.tumblr.com/0fc33e24c40e1e43cb1964f2b37cb916/tumblr_mrahsn1iCV1sstysro1_500.gif'),
+                'https://qph.cf2.quoracdn.net/main-qimg-9f7819b0ecae14938d5f0459e5e1b852'),
         CategoryContainerCard(
             arwalla: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => ActionsPage()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ActionsPage()));
             },
             sW: sW,
             sH: sH,
-            topic: '       ڕۆمانس',
+            topic: 'ڕۆمانس',
             rasm:
-                'https://31.media.tumblr.com/781150ac1ce6f67f0e19f2fd1698d31d/tumblr_mo717vKaO71s7f354o1_500.gif'),
+                'https://media.tenor.com/5StcGSZp1JIAAAAC/spiderman-spider-man.gif'),
       ]),
       bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
@@ -130,8 +131,8 @@ class ComicPage extends StatelessWidget {
               }
               //Acc
             },
-            textStyle: TextStyle(fontFamily: "Rabar"),
-            tabs: [
+            textStyle: const TextStyle(fontFamily: "Rabar"),
+            tabs: const [
               GButton(
                 icon: Icons.home_outlined,
                 text: '    سەرەکی',

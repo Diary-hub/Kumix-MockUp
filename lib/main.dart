@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_zanko/screens/actionComics.dart';
-import 'package:project_zanko/screens/card.dart';
-import 'package:project_zanko/screens/comicsPage.dart';
-import 'package:project_zanko/screens/detailsPage.dart';
 import 'package:project_zanko/screens/homePage.dart';
-// ignore: unused_import
-import 'package:project_zanko/screens/loginPage.dart';
-import 'package:project_zanko/screens/profilePage.dart';
-import 'package:project_zanko/screens/signupPage.dart';
 import 'package:project_zanko/screens/splashScreen.dart';
 
 void main() {
@@ -40,7 +32,7 @@ class MyApp extends StatelessWidget {
           onSurface: Color(0xff848486),
         ),
       ),
-      home: const ProfilePage(),
+      home: const HomePage(),
     );
   }
 }

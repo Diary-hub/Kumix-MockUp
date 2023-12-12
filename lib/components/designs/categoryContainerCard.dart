@@ -1,3 +1,4 @@
+// ignore_for_file: must_be_immutable, file_names
 import 'package:flutter/material.dart';
 import 'package:project_zanko/components/designs/proTextKurdish.dart';
 
@@ -37,7 +38,7 @@ class CategoryContainerCard extends StatelessWidget {
                 height: sH * 0.2,
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.amber,
                       width: 3,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(30)),
@@ -54,7 +55,7 @@ class CategoryContainerCard extends StatelessWidget {
               left: sW * 0.54,
               child: Container(
                 decoration: const BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.amber,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 width: sW * 0.3,
                 height: sH * 0.050,

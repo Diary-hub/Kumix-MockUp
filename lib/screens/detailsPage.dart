@@ -17,28 +17,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        surfaceTintColor: Theme.of(context).colorScheme.onBackground,
-        foregroundColor: Theme.of(context).colorScheme.background,
-
-        shadowColor: Theme.of(context).colorScheme.secondary,
-        elevation: 10,
-        // flexibleSpace: Container(
-        //   decoration: BoxDecoration(
-        //       gradient: LinearGradient(
-        //           tileMode: TileMode.clamp,
-        //           begin: Alignment.bottomCenter,
-        //           end: Alignment.topCenter,
-        //           colors: <Color>[
-        //         Theme.of(context).colorScheme.secondary,
-        //         Theme.of(context).colorScheme.secondary
-        //       ])),
-        // ),
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        foregroundColor: Colors.amber,
         centerTitle: true,
         title: ProTextKurdish(
             fontsize: 25,
             lines: 1,
-            rang: Theme.of(context).colorScheme.onBackground,
+            rang: Colors.amber,
             sW: sW,
             text: coms[index].titleEN),
       ),
@@ -106,6 +92,7 @@ class DetailPage extends StatelessWidget {
                                 ),
                               ),
                               SimpleButton(
+                                  color: Colors.amber,
                                   sH: sH * 0.05,
                                   sW: sW * 0.2,
                                   radius: 100,
@@ -296,6 +283,7 @@ class DetailPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(13.0),
             child: SimpleButton(
+                color: Colors.amber,
                 sH: sH * 0.08,
                 sW: sW * .90,
                 radius: 10,
