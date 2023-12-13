@@ -2,6 +2,7 @@
 
 A Kurdish Comics Tracker And Watcher App
 # Still in progress stage
+![HomePage](https://github.com/Diary-hub/Kumix/assets/39463871/82bbd858-192f-43de-bba6-136c19fa1f3d)
 ## Getting Started
 
 This project is a starting point for a Greater Application.
