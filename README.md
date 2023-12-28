@@ -14,7 +14,7 @@ Elevate your comic-reading experience with this feature-rich Flutter app designe
 
 This project is a starting point for a Greater Application.
 
-Funder of this project:
+Founder of this project:
 
 - [Diary Tariq Ibrahem](https://www.facebook.com/nah.just4reaal)
 - [Muhammed Salar Hussen](https://www.facebook.com/hamay.hajy.507)
